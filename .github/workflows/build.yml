@@ -33,7 +33,7 @@ jobs:
       # for further configuration details
       - name: Run mdl
         uses: actionshub/markdownlint@master
-      # Build the LaTeX slides
+      # Compile the LaTeX slides to PDF
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
