@@ -33,14 +33,9 @@ jobs:
       # for further configuration details
       - name: Run mdl
         uses: actionshub/markdownlint@master
-      # Install the Hack font
-      - name: Install Hack
+      # Install LaTeX and the required Hack font
+      - name: Install building tools
         run: sudo apt-get install texlive-latex-extra fonts-hack-ttf texlive-fonts-recommended texlive-fonts-extra lmodern texlive-luatex texlive-xetex latexmk
-      # Install the Hack font
+      # Build the presentation with the Makefile
       - name: Build the presentation
         run: make
-      # # Compile the LaTeX slides to PDF
-      # - name: Compile LaTeX document
-      #   uses: xu-cheng/latex-action@v2
-      #   with:
-      #     root_file: cs102-week-one.tex
