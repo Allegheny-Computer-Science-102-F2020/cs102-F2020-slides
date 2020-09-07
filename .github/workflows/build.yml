@@ -33,6 +33,9 @@ jobs:
       # for further configuration details
       - name: Run mdl
         uses: actionshub/markdownlint@master
+      # Install the Hack font
+      - name: Install Hack
+        run: sudo apt-get install fonts-hack-ttf
       # Compile the LaTeX slides to PDF
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
