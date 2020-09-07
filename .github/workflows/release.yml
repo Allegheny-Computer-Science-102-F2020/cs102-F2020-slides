@@ -1,7 +1,7 @@
 # Basic workflow that:
 # --> lints the markdown in the README file and all other Markdown files
 # --> builds the PDF of the CV using latexmk compiler
-name: build
+name: release
 
 # Controls when the action will run.
 # Triggers the workflow on push or pull request
