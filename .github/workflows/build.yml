@@ -35,9 +35,12 @@ jobs:
         uses: actionshub/markdownlint@master
       # Install the Hack font
       - name: Install Hack
-        run: sudo apt-get install fonts-hack-ttf
-      # Compile the LaTeX slides to PDF
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: cs102-week-one.tex
+        run: sudo apt-get install texlive-latex-extra fonts-hack-ttf texlive-fonts-recommended texlive-fonts-extra lmodern texlive-luatex texlive-xetex latexmk
+      # Install the Hack font
+      - name: Build the presentation
+        run: make
+      # # Compile the LaTeX slides to PDF
+      # - name: Compile LaTeX document
+      #   uses: xu-cheng/latex-action@v2
+      #   with:
+      #     root_file: cs102-week-one.tex
