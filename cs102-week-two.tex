@@ -5,6 +5,9 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 
+\usepackage{minted}
+\usemintedstyle{manni}
+
 \usetheme{auriga}
 \usecolortheme{auriga}
 
@@ -198,6 +201,24 @@
       %
   \end{itemize}
   %
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Using Python to Find a Name in a File}
+  \normalsize
+  \hspace*{-.65in}
+  \begin{minipage}{6in}
+    \vspace*{-.25in}
+    \begin{minted}[mathescape, linenos, numbersep=5pt, fontsize=\large]{python}
+    file = open("names")
+    for line in file:
+      if line.startswith("John")
+        print(line)
+    \end{minted}
+  \end{minipage}
+  \begin{itemize}
+    \item Does something appear here?
+  \end{itemize}
 \end{frame}
 
 \end{document}
