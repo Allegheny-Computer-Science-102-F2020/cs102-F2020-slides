@@ -8,6 +8,9 @@
 \usepackage{minted}
 \usemintedstyle{tango}
 
+\usepackage{moresize}
+\usepackage{anyfontsize}
+
 \usetheme{auriga}
 \usecolortheme{auriga}
 
@@ -210,6 +213,7 @@
   \normalsize
   \hspace*{-.65in}
   \begin{minipage}{6in}
+    \vspace*{.25in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
     file = open("names")
     for line in file:
@@ -222,6 +226,34 @@
     %
     \normalsize \noindent Can you explain the behavior of this program segment? \\
     \normalsize \noindent How is this different than a full-fledged Python program? \\
+    \normalsize \noindent What is the purpose of the {\tt line.startswith} function? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using Python to Find a Name in a File}
+  \normalsize
+  \hspace*{-.65in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+    file = open("emails")
+    for line in file:
+      name, email = line.split(",")
+      if name = "John Davis":
+        print(email)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent Can you explain the behavior of this program segment? \\
+    \normalsize \noindent What type of data are {\tt name} and {\tt email}? \\
+    \normalsize \noindent What is the purpose of the {\tt line.split} function? \\
     %
   \end{center}
   %
@@ -284,9 +316,66 @@
   %
 \end{frame}
 
+%% Slide
+%
+\begin{frame}{Average Computation in Mathematics}
+  %
+  \vspace*{-.5in}
+  \begin{center}
+  \fontsize{20}{30}\selectfont
+    \begin{equation*}
+     O = \{o_1, \ldots, o_n\}
+    \end{equation*}
+    \begin{equation*}
+      S = \sum_{o_i \in O} o_i
+    \end{equation*}
+    \begin{equation*}
+      A = \frac{S}{|O|}
+    \end{equation*}
+  \end{center}
+  %
+  \vspace{2ex}
+  %
+  \begin{center}
+    %
+    \small What is the meaning of $o_i \in O$? Where does this exist in Python?
+    %
+  \end{center}
+  %
+\end{frame}
+
+%% Slide
+%
+\begin{frame}{Another Average Computation in Mathematics}
+  %
+  \vspace*{-.5in}
+  \begin{center}
+  \fontsize{20}{30}\selectfont
+    \begin{equation*}
+     O = \{o_1, \ldots, o_n\}
+    \end{equation*}
+    \begin{equation*}
+      S = \sum_{i=1}^{n} o_i
+    \end{equation*}
+    \begin{equation*}
+      A = \frac{S}{n}
+    \end{equation*}
+  \end{center}
+  %
+  \vspace{2ex}
+  %
+  \begin{center}
+    %
+    \small What is the meaning of $\sum_{i=1}^{n} o_i$? Where does this exist in Python?
+    %
+  \end{center}
+  %
+\end{frame}
+
+
 % Slide
 %
-\begin{frame}{Some Mathematical Terminology}
+\begin{frame}{Useful Mathematical Terminology}
   %
   \begin{itemize}
     %
