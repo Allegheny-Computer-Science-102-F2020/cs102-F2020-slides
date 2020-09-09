@@ -6,7 +6,7 @@
 \usepackage{pgfplots}
 
 \usepackage{minted}
-\usemintedstyle{manni}
+\usemintedstyle{tango}
 
 \usetheme{auriga}
 \usecolortheme{auriga}
@@ -203,6 +203,8 @@
   %
 \end{frame}
 
+% Slide
+%
 \begin{frame}[fragile]
   \frametitle{Using Python to Find a Name in a File}
   \normalsize
@@ -222,6 +224,63 @@
     \normalsize \noindent How is this different than a full-fledged Python program? \\
     %
   \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using Python to Average Numerical Values}
+  \hspace*{-.6in}
+  \begin{minipage}{6in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+    sum = 0
+    count = 0
+    file = open("observations")
+    for line in file:
+      n = int(line)
+      sum += n
+      count += 1
+    print(sum/count)
+    \end{minted}
+  \end{minipage}
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Python Programming Retrospective}
+  %
+  \begin{itemize}
+    %
+    \item Intuitively read the code segments to grasp their behavior
+      %
+      \vspace*{-.15in}
+      %
+    \item Key components of the Python programming segments
+      %
+      \begin{itemize}
+        %
+        \item Function calls
+          %
+        \item Assignment statements
+          %
+        \item Iteration constructs
+          %
+        \item Conditional logic
+          %
+        \item Variable creation
+          %
+        \item Variable computations
+          %
+        \item Variable output
+          %
+      \end{itemize}
+      %
+      \vspace*{-.15in}
+      %
+    \item Make sure that you can find all of these components!
+      %
+  \end{itemize}
   %
 \end{frame}
 
