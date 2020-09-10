@@ -456,6 +456,7 @@
   %
 \end{frame}
 
+
 % Slide
 %
 \begin{frame}{Summary of the ``Abstraction Jumping''}
@@ -488,6 +489,53 @@
       temperatures in the file be a sequence?
       %
   \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Analyzing and Visualizing Temperature Values}
+  %
+  \begin{figure}
+    \begin{tikzpicture}[node distance=4cm, auto,>=latex', thick]
+      %
+      \path[use as bounding box] (2,1) rectangle (10,-2);
+      %
+      % Sensor* --> Data Sequence*
+      %
+      \path[->] node[process, font=\large] (sensor) {Sensor};
+      \path[->] node[entity, right of=sensor, align=center] (values) {Data \\ Sequence};
+      \path [draw, thick, -{>[scale=1.25]}, >=Latex] (sensor.east) -- (values.west);
+      %
+      % Data Sequence --> Data Analysis*
+      %
+      \path[->] node[process, right of=values, align=center] (analyze) {Data \\ Analysis};
+      \path [draw, thick, -{>[scale=1.25]}, >=Latex] (values.east) -- (analyze.west);
+      %
+      % Data Analysis --> Computed Average*
+      %
+      \path[->] node[entity, below of=analyze, align=center, yshift=1.5cm] (average) {Computed \\ Average};
+      \path [draw, thick, -{>[scale=1.25]}, >=Latex] (analyze.south) -- (average.north);
+      %
+      % Data Analysis --> Data Visualization*
+      %
+      \path[->] node[entity, right of=analyze, align=center] (graph) {Data \\ Graph};
+      \path [draw, thick, -{>[scale=1.25]}, >=Latex] (analyze.east) -- (graph.west);
+      %
+    \end{tikzpicture}
+    %
+    \vspace*{.6in}
+    \begin{center}
+      %
+      \normalsize
+      %
+      \noindent Why should we view the sensor's output as a sequence? \\
+      What is the data type for the computed average? \\
+      How would be visualized a sequence of temperature values?
+      %
+    \end{center}
+    %
+  \end{figure}
   %
 \end{frame}
 
@@ -593,28 +641,5 @@ True
   \end{minipage}
 \end{frame}
 
-\begin{frame}{Analyzing Sensed Temperature Values}
-  %
-  \begin{figure}
-    \hspace*{-1.5in}
-    \begin{tikzpicture}[node distance=4cm, auto,>=latex', thick]
-      %
-      \path[use as bounding box] (-1,0) rectangle (10,-2);
-      %
-      \path[->] node[process, font=\large] (sensor) {sensor};
-      %
-      \path[->] node[entity, right of=sensor, align=center] (values) {Data \\ Sequence};
-      %
-      \path [draw, thick, -{>[scale=1.25]}, >=Latex] (sensor.east) -- (values.west);
-      %
-      \path[->] node[process, right of=values, align=center] (analyze) {Data \\ Analysis};
-      %
-      \path [draw, thick, -{>[scale=1.25]}, >=Latex] (values.east) -- (analyze.west);
-
-    \end{tikzpicture}
-    %
-  \end{figure}
-  %
-\end{frame}
 
 \end{document}
