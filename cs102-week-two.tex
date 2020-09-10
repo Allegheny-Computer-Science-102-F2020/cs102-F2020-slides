@@ -2,7 +2,6 @@
 
 \usepackage{pgfpages}
 \usepackage{fancyvrb}
-\usepackage{tikz}
 \usepackage{pgfplots}
 
 \usepackage{minted}
@@ -13,7 +12,12 @@
 \usepackage{moresize}
 \usepackage{anyfontsize}
 
-\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{arrows.meta}
+
+\tikzstyle{process}=[rectangle, draw, thick, text width=5em, text centered, minimum height=2.5em, fill=gray!40]
+\tikzstyle{entity}=[rounded rectangle, draw, thick, text width=5em, text centered, minimum height=1.5em, fill=gray!40]
 
 \usetheme{auriga}
 \usecolortheme{auriga}
@@ -204,7 +208,7 @@
       \vspace*{-.15in}
       %
     \item VSCode provides support for Python through syntax highlighting, source
-      code formatting, linting, and testing
+      code processting, linting, and testing
       %
   \end{itemize}
   %
@@ -589,5 +593,28 @@ True
   \end{minipage}
 \end{frame}
 
+\begin{frame}{Analyzing Sensed Temperature Values}
+  %
+  \begin{figure}
+    \hspace*{-1.5in}
+    \begin{tikzpicture}[node distance=4cm, auto,>=latex', thick]
+      %
+      \path[use as bounding box] (-1,0) rectangle (10,-2);
+      %
+      \path[->] node[process, font=\large] (sensor) {sensor};
+      %
+      \path[->] node[entity, right of=sensor, align=center] (values) {Data \\ Sequence};
+      %
+      \path [draw, thick, -{>[scale=1.25]}, >=Latex] (sensor.east) -- (values.west);
+      %
+      \path[->] node[process, right of=values, align=center] (analyze) {Data \\ Analysis};
+      %
+      \path [draw, thick, -{>[scale=1.25]}, >=Latex] (values.east) -- (analyze.west);
+
+    \end{tikzpicture}
+    %
+  \end{figure}
+  %
+\end{frame}
 
 \end{document}
