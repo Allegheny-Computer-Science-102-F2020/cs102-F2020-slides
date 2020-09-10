@@ -523,4 +523,41 @@
   %
 \end{frame}
 
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Practical Variable Limitations in Python}
+  \normalsize
+  \hspace*{-.15in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\scriptsize]{text}
+Python 3.8.5 (default, Jul 23 2020, 21:35:10)
+[GCC 10.1.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 2**2**8
+115792089237316195423570985008687907853269984665640564039457584007913129639936
+>>> 2**2**10
+1797693134862315907729305190789024733617976978942306572734300811577326758055009
+6313270847732240753602112011387987139335765878976881441662249284743063947412437
+7767893424865485276302219601246094119453082952085005768838150682342462881473913
+110540827237163350510684586298239947245938479716304835356329624224137216
+>>> 2**2**100
+^CTraceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyboardInterrupt
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent What is the IP address of this server? \\
+    \normalsize \noindent What are some of the evident return codes? \\
+    \normalsize \noindent What kind of content can an HTTP server return? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+
 \end{document}
