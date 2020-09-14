@@ -285,7 +285,7 @@ def test_calculate_x_values_non_imaginary():
   %
   \begin{center}
     %
-    \normalsize \noindent {\bf Input}: Three floating-point inputs with values of $1$, $2$, and $1$
+    \normalsize \noindent {\bf Input}: Three floating-point inputs with values of 1, 2, and 1
     \normalsize \noindent {\bf Actual Output}: Stored in the variables called {\tt x\_one} and {\tt x\_two}\\
     \normalsize \noindent {\bf Assertions}: Ensure that the function calculated correctly\\
     %
@@ -380,6 +380,32 @@ def test_calculate_x_values_non_imaginary():
     \normalsize \noindent The {\tt for} loop allows a Python program to repeat an operation \\
     \normalsize \noindent This {\tt for} loop ``iterates'' through all of the lines in the file \\
     \normalsize \noindent Indentation indicates which statements are in the {\tt for} loop \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Iteration Alternatives Python Programs}
+  \normalsize
+  \hspace*{-.65in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+    for i in range(20):
+        print("2 to the " + str(i)
+              + " power is " + str(2**i))
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent The {\tt for} loop displays the powers of 2 from 0 to 19 \\
+    \normalsize \noindent The {\tt range} function returns the values from 0 to 19 \\
+    \normalsize \noindent The {\tt 2**i} performs the computation $2^i$ \\
+    \normalsize \noindent The {\tt str} function converts the integers to a string \\
     %
   \end{center}
   %
