@@ -29,7 +29,7 @@
 \definecolor{blue}{RGB}{0, 118, 186}
 \definecolor{gray}{RGB}{146, 146, 146}
 
-\title{Discrete Structures: \\ Basics of Mathematics and Programming}
+\title{Discrete Structures: \\ Computational and Mathematical Tasks in Python}
 
 \author{{\bf Gregory M. Kapfhammer}}
 
@@ -109,7 +109,7 @@
 % Slide
 %
 \begin{frame}[fragile]
-  \frametitle{Using Python to Find a Name in a File}
+  \frametitle{Python Programs are Sequences of Statements}
   \normalsize
   \hspace*{-.65in}
   \begin{minipage}{6in}
@@ -136,7 +136,7 @@
 % Slide
 %
 \begin{frame}[fragile]
-  \frametitle{Using Python to Average Numerical Values}
+  \frametitle{Simple and Compound Statements in Python}
   \hspace*{-.6in}
   \begin{minipage}{6in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
@@ -154,7 +154,7 @@
 
 % Slide
 %
-\begin{frame}{Enhancing Python Programs}
+\begin{frame}{Industry-Standard Python Programming}
   %
   \begin{itemize}
     %
@@ -187,6 +187,73 @@
     \item The book does not always adhere to industry standards!
       %
   \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Command-Line Interfaces for Python Programs}
+  \normalsize
+  \hspace*{-.15in}
+  \begin{minipage}{6in}
+    \vspace*{.15in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\footnotesize]{python}
+def main(
+    a: float = typer.Option(1),
+    b: float = typer.Option(2),
+    c: float = typer.Option(2)
+):
+    """Calculate roots of a quadratic eqn with quadratic formula."""
+    typer.echo(f"Calculating the roots of a quadratic equation with:")
+    typer.echo(f"   a = {a}")
+    typer.echo(f"   b = {b}")
+    typer.echo(f"   c = {c}")
+    x_one, x_two = rootfind.calculate_quadratic_equation_roots(a, b, c)
+    typer.echo(f"   x_one = {x_one}")
+    typer.echo(f"   x_two = {x_two}")
+
+if __name__ == "__main__":
+    typer.run(main)
+    \end{minted}
+  \end{minipage}
+  %
+  \vspace*{.05in}
+  %
+  \begin{center}
+    %
+    \normalsize \noindent This program can accept user input through the command line \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Calculating the Roots of a Quadratic Function}
+  \hspace*{-.2in}
+  \begin{minipage}{6in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\small]{python}
+def calc_quad_eqn_roots(a: float, b: float, c: float):
+    """Calculate the roots of a quadratic equation."""
+    D = (b * b - 4 * a * c) ** 0.5
+    x_one = (-b + D) / (2 * a)
+    x_two = (-b - D) / (2 * a)
+    return x_one, x_two
+    \end{minted}
+  \end{minipage}
+  %
+  \vspace*{.05in}
+  %
+  \begin{center}
+    %
+    \normalsize \noindent {\bf Input}: three floating-point inputs called {\tt a}, {\tt b}, and {\tt c}\\
+    \normalsize \noindent {\bf Output}: two floating-point outputs called {\tt x\_one} and {\tt x\_two}\\
+    \normalsize \noindent {\bf Behavior}: calculate the roots of a quadratic equation\\
+    \normalsize \noindent {\bf Question}: how does this function work? how would you test it?
+    %
+  \end{center}
   %
 \end{frame}
 
