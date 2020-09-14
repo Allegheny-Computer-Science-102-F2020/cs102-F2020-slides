@@ -234,6 +234,9 @@ if __name__ == "__main__":
   \frametitle{Calculating the Roots of a Quadratic Function}
   \hspace*{-.2in}
   \begin{minipage}{6in}
+    %
+    \vspace*{.2in}
+    %
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\small]{python}
 def calc_quad_eqn_roots(a: float, b: float, c: float):
     """Calculate the roots of a quadratic equation."""
@@ -248,10 +251,10 @@ def calc_quad_eqn_roots(a: float, b: float, c: float):
   %
   \begin{center}
     %
-    \normalsize \noindent {\bf Input}: three floating-point inputs called {\tt a}, {\tt b}, and {\tt c}\\
-    \normalsize \noindent {\bf Output}: two floating-point outputs called {\tt x\_one} and {\tt x\_two}\\
-    \normalsize \noindent {\bf Behavior}: calculate the roots of a quadratic equation\\
-    \normalsize \noindent {\bf Question}: how does this function work? how would you test it?
+    \normalsize \noindent {\bf Input}: Three floating-point inputs called {\tt a}, {\tt b}, and {\tt c}\\
+    \normalsize \noindent {\bf Output}: Two floating-point outputs called {\tt x\_one} and {\tt x\_two}\\
+    \normalsize \noindent {\bf Behavior}: Calculate the roots of a quadratic equation\\
+    \normalsize \noindent {\bf Question}: How does this function work? How do you test it?
     %
   \end{center}
   %
@@ -263,6 +266,9 @@ def calc_quad_eqn_roots(a: float, b: float, c: float):
   \frametitle{Testing the Root Finding Function}
   \hspace*{-.2in}
   \begin{minipage}{6in}
+    %
+    \vspace*{.2in}
+    %
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\small]{python}
 def test_calculate_x_values_non_imaginary():
     """Check calculation of x values."""
@@ -279,9 +285,9 @@ def test_calculate_x_values_non_imaginary():
   %
   \begin{center}
     %
-    \normalsize \noindent {\bf Input}: three floating-point inputs with values of $1$, $2$, and $1$
-    \normalsize \noindent {\bf Actual Output}: stored in the variables called {\tt x\_one} and {\tt x\_two}\\
-    \normalsize \noindent {\bf Assertions}: ensure that the function calculated correctly\\
+    \normalsize \noindent {\bf Input}: Three floating-point inputs with values of $1$, $2$, and $1$
+    \normalsize \noindent {\bf Actual Output}: Stored in the variables called {\tt x\_one} and {\tt x\_two}\\
+    \normalsize \noindent {\bf Assertions}: Ensure that the function calculated correctly\\
     %
   \end{center}
   %
@@ -328,6 +334,33 @@ def test_calculate_x_values_non_imaginary():
 % Slide
 %
 \begin{frame}[fragile]
+  \frametitle{Conditional Logic in Python Programs}
+  \normalsize
+  \hspace*{-.65in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+    file = open("emails")
+    for line in file:
+      name, email = line.split(",")
+      if name == "John Davis":
+        print(email)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent The {\tt if} statement allows the program to make a decision \\
+    \normalsize \noindent The {\tt ==} operator compares {\tt name} to a String literal \\
+    \normalsize \noindent When the condition is {\tt true} the {\tt print} executes \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
   \frametitle{Iteration Constructs in Python Programs}
   \normalsize
   \hspace*{-.65in}
@@ -337,7 +370,7 @@ def test_calculate_x_values_non_imaginary():
     file = open("emails")
     for line in file:
       name, email = line.split(",")
-      if name = "John Davis":
+      if name == "John Davis":
         print(email)
     \end{minted}
   \end{minipage}
