@@ -232,7 +232,7 @@ if __name__ == "__main__":
 %
 \begin{frame}[fragile]
   \frametitle{Calculating the Roots of a Quadratic Function}
-  \hspace*{-.2in}
+  \hspace*{-.1in}
   \begin{minipage}{6in}
     %
     \vspace*{.2in}
@@ -264,7 +264,7 @@ def calc_quad_eqn_roots(a: float, b: float, c: float):
 %
 \begin{frame}[fragile]
   \frametitle{Testing the Root Finding Function}
-  \hspace*{-.2in}
+  \hspace*{-.1in}
   \begin{minipage}{6in}
     %
     \vspace*{.2in}
@@ -388,7 +388,7 @@ def test_calculate_x_values_non_imaginary():
 % Slide
 %
 \begin{frame}[fragile]
-  \frametitle{Iteration Alternatives Python Programs}
+  \frametitle{Using {\tt for} Loops in Python Programs}
   \normalsize
   \hspace*{-.65in}
   \begin{minipage}{6in}
@@ -406,6 +406,93 @@ def test_calculate_x_values_non_imaginary():
     \normalsize \noindent The {\tt range} function returns the values from 0 to 19 \\
     \normalsize \noindent The {\tt 2**i} performs the computation $2^i$ \\
     \normalsize \noindent The {\tt str} function converts the integers to a string \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using {\tt while} Loops in Python Programs}
+  \normalsize
+  \hspace*{-.65in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+    i = 0
+    while i < 20:
+        print("2 to the " + str(i)
+              + " power is " + str(2**i))
+        i += 1
+    \end{minted}
+  \end{minipage}
+  \vspace*{.1in}
+  \begin{center}
+    %
+    \normalsize \noindent The {\tt for} loop and the {\tt while} loop are equivalent\\
+    \normalsize \noindent The {\tt print} statement is the same for both of the loops\\
+    \normalsize \noindent The purpose of {\tt i += 1} is to increment the loop counter\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Output of a Python Program Using Iteration}
+  \normalsize
+  \hspace*{-.35in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\small]{text}
+    2 to the 0 power is 1
+    2 to the 1 power is 2
+    2 to the 2 power is 4
+    2 to the 3 power is 8
+    2 to the 4 power is 16
+    2 to the 5 power is 32
+    2 to the 6 power is 64
+    2 to the 7 power is 128
+    2 to the 8 power is 256
+    2 to the 9 power is 512
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent The output displays the counter and the computation\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Output of a Python Program Using Iteration}
+  \normalsize
+  \hspace*{-.35in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\small]{text}
+    2 to the 10 power is 1024
+    2 to the 11 power is 2048
+    2 to the 12 power is 4096
+    2 to the 13 power is 8192
+    2 to the 14 power is 16384
+    2 to the 15 power is 32768
+    2 to the 16 power is 65536
+    2 to the 17 power is 131072
+    2 to the 18 power is 262144
+    2 to the 19 power is 524288
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent The {\tt for} and {\tt while} loops create the same output!\\
     %
   \end{center}
   %
