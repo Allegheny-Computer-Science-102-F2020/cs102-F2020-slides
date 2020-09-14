@@ -404,8 +404,8 @@ def test_calculate_x_values_non_imaginary():
     %
     \normalsize \noindent The {\tt for} loop displays the powers of 2 from 0 to 19 \\
     \normalsize \noindent The {\tt range} function returns the values from 0 to 19 \\
-    \normalsize \noindent The {\tt 2**i} performs the computation $2^i$ \\
-    \normalsize \noindent The {\tt str} function converts the integers to a string \\
+    \normalsize \noindent The {\tt 2**i} performs the computation of $2^i$ \\
+    \normalsize \noindent The {\tt str} function converts an integer to a string \\
     %
   \end{center}
   %
@@ -500,6 +500,33 @@ def test_calculate_x_values_non_imaginary():
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Using a Loop to Approximate Square Roots}
+  \normalsize
+  \hspace*{-.45in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{python}
+    n = 4
+    guess = 1.0
+    while abs(n - guess*guess) > 0.0001:
+        guess = guess - (guess*guess - n)/(2*guess)
+    root = guess
+    \end{minted}
+  \end{minipage}
+  \vspace*{.1in}
+  \begin{center}
+    %
+    \normalsize \noindent The {\tt while} loop uses {\tt abs} for computing an absolute value\\
+    \normalsize \noindent This loop computes the root as 2.0000000929222947\\
+    \normalsize \noindent The {\tt math.sqrt(n)} function confirms this approximation!\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Computing with Python Programs}
   %
   \begin{itemize}
@@ -531,6 +558,42 @@ def test_calculate_x_values_non_imaginary():
       \vspace*{-.2in}
       %
     \item Programs must have correct format, comments, and tests!
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Investigations in Python and Mathematics}
+  %
+  \begin{itemize}
+    %
+    \item How do you pick between the {\tt for} and {\tt while} loops?
+      %
+      \vspace*{-.15in}
+      %
+    \item Program for the root finding of a quadratic equation
+      %
+      \begin{itemize}
+        %
+        \item {\bf Q1}: What does it mean if a number is imaginary?
+          %
+        \item {\bf Q2}: What happens if the root of the equation is imaginary?
+          %
+        \item {\bf Q3}: How do tests use assertions for floating point values?
+          %
+        \item {\bf Q4}: How can you confirm that the function works correctly?
+          %
+        \item {\bf Q5}: How do you know when you have tested enough?
+          %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item Can you translate the root finding equation into a Python program?
+      Can you ensure its correctness? Can you follow industry standards for
+      comments, format, and testing?
       %
   \end{itemize}
   %
