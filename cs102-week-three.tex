@@ -257,4 +257,72 @@ def calc_quad_eqn_roots(a: float, b: float, c: float):
   %
 \end{frame}
 
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Testing the Root Finding Function}
+  \hspace*{-.2in}
+  \begin{minipage}{6in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\small]{python}
+def test_calculate_x_values_non_imaginary():
+    """Check calculation of x values."""
+    a = 1
+    b = 2
+    c = 1
+    x_one, x_two = rootfind.calc_quad_eqn_roots(a, b, c)
+    assert x_one == -1.0
+    assert x_two == -1.0
+    \end{minted}
+  \end{minipage}
+  %
+  \vspace*{.05in}
+  %
+  \begin{center}
+    %
+    \normalsize \noindent {\bf Input}: three floating-point inputs with values of $1$, $2$, and $1$
+    \normalsize \noindent {\bf Actual Output}: stored in the variables called {\tt x\_one} and {\tt x\_two}\\
+    \normalsize \noindent {\bf Assertions}: ensure that the function calculated correctly\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+%% Slide
+%
+\begin{frame}{Mathematical Equations for Root Finding}
+  %
+  \vspace*{-.5in}
+  %
+  \begin{center}
+    %
+    \fontsize{20}{30}\selectfont
+    %
+    \begin{equation*}
+      %
+      x_1=\frac{-b+\sqrt{b^2-4ac}}{2a}
+      %
+    \end{equation*}
+    %
+    \begin{equation*}
+      %
+      x_2=\frac{-b-\sqrt{b^2-4ac}}{2a}
+      %
+    \end{equation*}
+    %
+  \end{center}
+  %
+  \vspace{.05ex}
+  %
+  \begin{center}
+    %
+    \small What is the meaning of the ``root'' of a quadratic equation? \\
+    %
+    \small For a quadratic equation $f(x)= a \times x^2 + b \times x +c$, the
+    variables $x_1$ and $x_2$ are the points where the equation's output are
+    the same\\
+    %
+  \end{center}
+  %
+\end{frame}
+
 \end{document}
