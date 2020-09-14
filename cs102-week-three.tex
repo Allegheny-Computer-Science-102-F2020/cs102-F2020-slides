@@ -325,4 +325,31 @@ def test_calculate_x_values_non_imaginary():
   %
 \end{frame}
 
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Iteration Constructs in Python Programs}
+  \normalsize
+  \hspace*{-.65in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+    file = open("emails")
+    for line in file:
+      name, email = line.split(",")
+      if name = "John Davis":
+        print(email)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent The {\tt for} loop allows a Python program to repeat an operation \\
+    \normalsize \noindent This {\tt for} loop ``iterates'' through all of the lines in the file \\
+    \normalsize \noindent Indentation indicates which statements are in the {\tt for} loop \\
+    %
+  \end{center}
+  %
+\end{frame}
+
 \end{document}
