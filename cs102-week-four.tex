@@ -303,6 +303,87 @@
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Higher-Order Functions in Python}
+  \hspace*{-.6in}
+  \begin{minipage}{6in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+    def square(number: int):
+        return number * number
+
+    def call_twice(f, number: int):
+        return f(f(number))
+
+    number = 5
+    result = call_twice(square, number)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Understanding Higher-Order Functions}
+  %
+  \begin{itemize}
+    %
+    \item You can pass a function as an argument to a function!
+      %
+      \vspace*{-.15in}
+      %
+    \item The behavior of higher-order functions in Python
+      %
+      \begin{itemize}
+        %
+        \item {\bf Step 1}: {\tt square} is a function that computes and
+          returns $x^2$
+          %
+        \item {\bf Step 2}: {\tt call\_twice} is a function that calls a
+          function {\tt f} twice
+          %
+        \item {\bf Step 3}: First, {\tt call\_twice} calls {\tt f} with {\tt
+          number}
+          %
+        \item {\bf Step 4}: Then, {\tt call\_twice} calls {\tt f} with {\tt
+          f(number)}
+          %
+        \item {\bf Step 5}: Finally, {\tt call\_twice} returns result of {\tt
+          f(f(number))}
+          %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item Can you predict the output of the {\tt call\_twice} function? How
+      would you test the {\tt call\_twice} function? Can you express this
+      computation in a different fashion?
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Calling Higher-Order Functions in Python}
+  \hspace*{-.1in}
+  \begin{minipage}{6in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+num = 5
+result = call_twice(square, num)
+print("Calling the square twice with " +
+      str(num) + " is " + str(result))
+num = 5
+result = num ** 4
+print("Computation of twice square is "
+      + str(num) + " is " + str(result))
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Investigations in Python and Mathematics}
   %
   \begin{itemize}
