@@ -477,7 +477,7 @@ print("Calling square lambda twice " +
       \normalsize
       %
       \noindent How do we compute the {\em mean} of a list of numbers? \\
-      \noindent How do we compute the {\em median} of a list of numbers? \\
+      \noindent How do we compute summary statistics of a list of numbers? \\
       \noindent What type of function? Recursive? Iterative? Lambda?
       %
     \end{center}
@@ -486,6 +486,52 @@ print("Calling square lambda twice " +
   %
 \end{frame}
 
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Computing the Arithmetic Mean in Python}
+  \hspace*{-.1in}
+  \begin{minipage}{6in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+def compute_mean(numbers):
+    s = sum(numbers)
+    N = len(numbers)
+    mean = s / N
+    return mean
+
+numbers = [5,1,7,99,4]
+print(str(compute_mean(numbers)))
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Type Hints for Function Parameters}
+  \hspace*{.1in}
+  \begin{minipage}{6in}
+    \vspace*{.1in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+from typing import List
+
+def compute_mean(numbers: List):
+    s = sum(numbers)
+    N = len(numbers)
+    mean = s / N
+    return mean
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent What are the benefits of adding type hints to
+    parameters? \\
+    %
+  \end{center}
+
+\end{frame}
 
 % Slide
 %
@@ -497,27 +543,28 @@ print("Calling square lambda twice " +
       %
       \vspace*{-.35in}
       %
-    \item Program for the root finding of a quadratic equation
+    \item Python functions to perform statistical analysis of data
       %
       \begin{itemize}
         %
-        \item {\bf Q1}: What does it mean if a number is imaginary?
+        \item {\bf Q1}: How do you compute the median of a list of numbers?
           %
-        \item {\bf Q2}: What happens if the root of the equation is imaginary?
+        \item {\bf Q2}: How do you compute the mode of a list of numbers?
           %
-        \item {\bf Q3}: How do tests use assertions for floating point values?
+        \item {\bf Q3}: How do you compute a frequency table of a list of
+          numbers?
           %
-        \item {\bf Q4}: How can you confirm that the function works correctly?
+        \item {\bf Q4}: How do you compute the range of a list of numbers?
           %
-        \item {\bf Q5}: How do you know when you have tested enough?
+        \item {\bf Q5}: How do you compute the variance and standard deviation?
           %
       \end{itemize}
       %
       \vspace*{-.2in}
       %
-    \item Can you translate the root finding equation into a Python program?
-      Can you ensure its correctness? Can you follow industry standards for
-      comments, format, and testing?
+    \item Can you translate the mathematical descriptions of these summary
+      statistics to Python programs? Can you ensure their correctness? Can you
+      follow industry best practices?
       %
   \end{itemize}
   %
