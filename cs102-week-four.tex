@@ -69,37 +69,37 @@
 
 % Slide
 %
-\begin{frame}{Python Programming Retrospective}
+\begin{frame}{Python Programming with Functions}
   %
   \begin{itemize}
     %
-    \item Intuitively read the code segments to grasp their behavior
+    \item Intuitively read the functions to grasp their behavior
       %
       \vspace*{-.15in}
       %
-    \item Key components of the Python programming segments
+    \item Key components of the Python functions
       %
       \begin{itemize}
         %
-        \item Function calls
+        \item Definition of the function
           %
-        \item Assignment statements
+        \item Parameter(s) that serve as the input
           %
-        \item Iteration constructs
+        \item Body that performs a computation
           %
-        \item Conditional logic
+        \item Function return value(s) that produce output
           %
-        \item Variable creation
+        \item Invocation of the function
           %
-        \item Variable computations
+        \item Collecting the output of the function
           %
-        \item Variable output
+        \item Test case(s) for the function
           %
       \end{itemize}
       %
       \vspace*{-.2in}
       %
-    \item Investigate the syntax and semantics of these components!
+    \item Investigate the ways to {\em define} and {\em call} Python functions!
       %
   \end{itemize}
   %
@@ -108,25 +108,52 @@
 % Slide
 %
 \begin{frame}[fragile]
-  \frametitle{Python Programs are Sequences of Statements}
+  \frametitle{Computing the Absolute Value of a Number}
   \normalsize
   \hspace*{-.65in}
   \begin{minipage}{6in}
     \vspace*{.25in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
-    file = open("emails")
-    for line in file:
-      name, email = line.split(",")
-      if name == "John Davis":
-        print(email)
+    def abs(n):
+        if n >= 0:
+            return n
+        else:
+            return -n
     \end{minted}
   \end{minipage}
   \vspace*{.25in}
   \begin{center}
     %
-    \normalsize \noindent A Python program is a sequence of statements \\
-    \normalsize \noindent Programs contain both {\em simple} and {\em compound} statements \\
-    \normalsize \noindent Why is this, technically, not a ``Python program''? \\
+    \normalsize \noindent The absolute value of a number is its distance from zero \\
+    \normalsize \noindent What is the output of {\tt print(str(abs(10)))}? \\
+    \normalsize \noindent What is the output of {\tt print(str(abs(-10)))}? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Alternative Absolute Value Computation}
+  \normalsize
+  \hspace*{-.65in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+    def abs(n):
+        if n >= 0:
+            return n
+        return -n
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent Does this function compute the same value? \\
+    \normalsize \noindent Which implementation of {\tt abs} do you prefer? \\
+    \normalsize \noindent Which implementation of {\tt abs} does {\tt pylint} prefer? \\
+    \normalsize \noindent There are different ways to implement the same function! \\
     %
   \end{center}
   %
@@ -136,24 +163,29 @@
 %
 \begin{frame}[fragile]
   \frametitle{Simple and Compound Statements in Python}
-  \hspace*{-.6in}
+  \hspace*{-.8in}
   \begin{minipage}{6in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
-    sum = 0
-    count = 0
-    file = open("observations")
-    for line in file:
-      n = int(line)
-      sum += n
-      count += 1
-    print(sum/count)
+    def sqrt(num: int, tol: float):
+        guess = 1.0
+        while abs(num - guess*guess) > tol:
+            guess = guess -
+            (guess*guess - num)/(2*guess)
+        return guess
     \end{minted}
   \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent What are the benefits of defining this as a function? \\
+    \normalsize \noindent What is the meaning of ``{\tt num:int}'' and ``{\tt tol:float}''? \\
+    %
+  \end{center}
 \end{frame}
 
 % Slide
 %
-\begin{frame}{Industry-Standard Python Programming}
+\begin{frame}{Reminders About Industry-Standard Python}
   %
   \begin{itemize}
     %
@@ -183,7 +215,7 @@
       %
       \vspace*{-.2in}
       %
-    \item The book does not always adhere to industry standards!
+    \item Use type hints to explain the type of each parameter
       %
   \end{itemize}
   %
