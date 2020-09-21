@@ -162,7 +162,7 @@
 % Slide
 %
 \begin{frame}[fragile]
-  \frametitle{Simple and Compound Statements in Python}
+  \frametitle{Using Newton's Method in a Function}
   \hspace*{-.8in}
   \begin{minipage}{6in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
@@ -207,7 +207,7 @@
       %
       \vspace*{-.2in}
       %
-    \item Add comments for important blocks of your program
+    \item Add comments for important blocks of your function
       %
       \vspace*{-.2in}
       %
@@ -219,6 +219,86 @@
       %
   \end{itemize}
   %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Recursive Functions in Python Programs}
+  \hspace*{-.8in}
+  \begin{minipage}{6in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+    def factorial(number: int):
+        if number == 1:
+            return 1
+        return number * factorial(number - 1)
+
+    num = 5
+    print("The factorial of " + str(num) +
+           " is " + str(factorial(num)))
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Recursive Computation of the Factorial Function}
+  %
+  \begin{itemize}
+    %
+    \item As an equation: $n! = n \times n-1 \times n-2 \times \ldots \times 1$
+      %
+      \vspace*{-.15in}
+      %
+    \item What are the parts of a recursive function in Python?
+      %
+      \begin{itemize}
+        %
+        \item Defined by cases using conditional logic
+          %
+        \item A function definition that calls itself
+          %
+        \item A recursive call that makes progress to a base case
+          %
+        \item A base case that stops the recursive function calls
+          %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item Repeatedly perform an operation through function calls
+      %
+      \vspace*{-.2in}
+      %
+    \item What would happen if you input a negative number?
+      %
+      \vspace*{-.2in}
+      %
+    \item How could you write this function with iteration?
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Finding the Parts of a Recursive Function}
+  \hspace*{-.8in}
+  \begin{minipage}{6in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+    def factorial(number: int):
+        if number == 1:
+            return 1
+        return number * factorial(number - 1)
+
+    num = 5
+    print("The factorial of " + str(num) +
+           " is " + str(factorial(num)))
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
 \end{frame}
 
 % Slide
