@@ -20,11 +20,10 @@ result = number ** 4
 print("Direct computation of twice square is " + str(number) + " is " + str(result))
 print()
 
-square = lambda x: x*x
+square_lambda = lambda x: x*x
 
 number = 5
-result = call_twice(square, number)
+result = call_twice(square_lambda, number)
 
-print()
-print("Calling the square twice with " + str(number) + " is " + str(result))
+print("Calling the square lambda twice with " + str(number) + " is " + str(result))
 print()
