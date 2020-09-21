@@ -384,6 +384,53 @@ print("Computation of twice square is "
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Lambda Expressions in Python}
+  \hspace*{-.1in}
+  \begin{minipage}{6in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+square = lambda x: x*x
+num = 5
+result = call_twice(square, num)
+print("Calling square lambda twice " +
+      "with " +
+      str(number) +
+      " is " +
+      str(result))
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Understanding Lambda Expressions}
+  %
+  \begin{itemize}
+    %
+    \item You can define a ``function'' without an explicit name!
+      %
+      \vspace*{-.2in}
+      %
+    \item What are benefits of {\tt square = lambda x: x*x}?
+      %
+      \vspace*{-.2in}
+      %
+    \item What are drawbacks of {\tt square = lambda x: x*x}?
+      %
+      \vspace*{-.2in}
+      %
+    \item How do you decide between an ``anonymous'' and a ``named'' function
+      when implementing a Python function?
+      %
+      \vspace*{-.2in}
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Investigations in Python and Mathematics}
   %
   \begin{itemize}
