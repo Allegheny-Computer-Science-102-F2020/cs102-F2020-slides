@@ -521,6 +521,55 @@ Direct computation of twice square is 5 is 625
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Computing the Arithmetic Mean in Python}
+  \hspace*{-.1in}
+  \begin{minipage}{6in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+def compute_mean(numbers):
+    s = sum(numbers)
+    N = len(numbers)
+    mean = s / N
+    return mean
+
+numbers = [5,1,7,99,4]
+print(str(compute_mean(numbers)))
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Program Output with Higher-Order Functions}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\small]{text}
+Called compute_mean with numbers = [5, 10, 5, 10, 5]
+Sum of numbers = 35
+Length of numbers = 5
+Calculated mean = 7.0
+
+Called compute_mean with numbers = [5, 1, 7, 99, 4]
+Sum of numbers = 116
+Length of numbers = 5
+Calculated mean = 23.2
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent The debugging statements illustrate the function's
+    behavior!\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Implementing and Debugging Python Functions}
   %
   \begin{itemize}
