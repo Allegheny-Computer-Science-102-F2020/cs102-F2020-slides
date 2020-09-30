@@ -422,6 +422,25 @@ The factorial of 5 is 120
   %
 \end{frame}
 
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Higher-Order Functions in Python}
+  \hspace*{-.6in}
+  \begin{minipage}{6in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+    def square(number: int):
+        return number * number
+
+    def call_twice(f, number: int):
+        return f(f(number))
+
+    number = 5
+    result = call_twice(square, number)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+\end{frame}
 
 % Slide
 %
