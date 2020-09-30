@@ -100,7 +100,7 @@
       %
       \vspace*{-.2in}
       %
-    \item Learn ways add {\tt print} statements to make debugging output,
+    \item Learn how {\tt print} statements can create debugging output,
       helping to understand a function's behavior
       %
   \end{itemize}
@@ -276,6 +276,35 @@ Value of i: 19
   \begin{center}
     %
     \normalsize \noindent Any questions about the  {\tt for} loop's behavior?\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using {\tt while} Loops in Python Programs}
+  \normalsize
+  \hspace*{-.65in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+    i = 0
+    while i < 20:
+        print("2 to the " + str(i)
+              + " power is " + str(2**i))
+        i += 1
+    \end{minted}
+  \end{minipage}
+  \vspace*{.1in}
+  \begin{center}
+    %
+    \normalsize \noindent The purpose of {\tt i += 1} is to increment the loop counter\\
+    \normalsize \noindent The {\tt print} statement is the same in {\tt for} and
+    {\tt while }loops\\
+    \normalsize \noindent Can you trace the execution of this iteration
+    construct?\\
     %
   \end{center}
   %
