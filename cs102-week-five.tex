@@ -360,11 +360,11 @@ Value of i: 19
       %
       \vspace*{-.2in}
       %
-    \item Can you find all of the components of this recursive function?
+    \item Can you find all the components of this recursive function?
       %
-      \vspace*{-.2in}
+      \vspace*{-.4in}
       %
-    \item Can you explain how this recursive function behaviors when called?
+    \item Can you explain how this recursive function behaves?
       %
   \end{itemize}
   %
@@ -388,6 +388,38 @@ Value of i: 19
     \end{minted}
   \end{minipage}
   \vspace*{.05in}
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Output of a Python Program Using Recursion}
+  \normalsize
+  % \hspace*{-.35in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\small]{text}
+Current call factorial(5)
+  ... Now calling factorial(4)
+Current call factorial(4)
+  ... Now calling factorial(3)
+Current call factorial(3)
+  ... Now calling factorial(2)
+Current call factorial(2)
+  ... Now calling factorial(1)
+Current call factorial(1)
+  ... Hit the base case!
+The factorial of 5 is 120
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent The debugging output shows that the function calls
+    itself!\\
+    %
+  \end{center}
+  %
 \end{frame}
 
 
