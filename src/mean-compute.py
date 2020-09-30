@@ -7,7 +7,7 @@ def compute_mean(numbers):
     return mean
 
 
-numbers = [5,1,7,99,4]
+numbers = [5,10,5,10,5]
 print(str(compute_mean(numbers)))
 
 
@@ -21,5 +21,5 @@ def compute_mean(numbers: List):
     return mean
 
 
-numbers = [5,1,7,99,4]
+numbers = [5,5,5,5,5]
 print(str(compute_mean(numbers)))
