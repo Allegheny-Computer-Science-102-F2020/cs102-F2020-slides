@@ -1,10 +1,11 @@
-#!/bin/python3
-
 def square(number: int):
+    print(f"Called square({number})")
+    print(f"  returning {number*number}")
     return number * number
 
 
 def call_twice(f, number: int):
+    print(f"Calling twice {f} with starting number of {number}")
     return f(f(number))
 
 
