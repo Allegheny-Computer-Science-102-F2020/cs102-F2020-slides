@@ -395,7 +395,6 @@ Value of i: 19
 \begin{frame}[fragile]
   \frametitle{Output of a Python Program Using Recursion}
   \normalsize
-  % \hspace*{-.35in}
   \begin{minipage}{6in}
     \vspace*{.25in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\small]{text}
@@ -440,6 +439,36 @@ The factorial of 5 is 120
     \end{minted}
   \end{minipage}
   \vspace*{.05in}
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Program Output with Higher-Order Functions}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\small]{text}
+Calling twice <function square at 0x7f36331d01f0> with
+  starting number of 5
+Called square(5)
+  returning 25
+Called square(25)
+  returning 625
+
+Calling the square twice with 5 is 625
+
+Direct computation of twice square is 5 is 625
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent What is the meaning of the {\tt 0x7f36331d01f0}
+    notation?\\
+    %
+  \end{center}
+  %
 \end{frame}
 
 % Slide
