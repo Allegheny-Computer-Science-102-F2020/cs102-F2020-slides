@@ -1,5 +1,3 @@
-#!/bin/python3
-
 def compute_mean(numbers):
     s = sum(numbers)
     N = len(numbers)
