@@ -473,6 +473,54 @@ Direct computation of twice square is 5 is 625
 
 % Slide
 %
+\begin{frame}{Creating Functions for Statistical Analysis}
+  %
+  \begin{figure}
+    \begin{tikzpicture}[node distance=4cm, auto,>=latex', thick]
+      %
+      \path[use as bounding box] (2,1) rectangle (10,-2);
+      %
+      % Sensor* --> Data Sequence*
+      %
+      \path[->] node[process, font=\large] (sensor) {Sensor};
+      \path[->] node[entity, right of=sensor, align=center] (values) {Data \\ Sequence};
+      \path [draw, thick, -{>[scale=1.25]}, >=Latex] (sensor.east) -- (values.west);
+      %
+      % Data Sequence --> Data Analysis*
+      %
+      \path[->] node[process, right of=values, align=center] (analyze) {Data \\ Analysis};
+      \path [draw, thick, -{>[scale=1.25]}, >=Latex] (values.east) -- (analyze.west);
+      %
+      % Data Analysis --> Computed Mean*
+      %
+      \path[->] node[entity, below of=analyze, align=center, yshift=1.5cm]
+        (average) {Computed \\ Mean};
+      \path [draw, thick, -{>[scale=1.25]}, >=Latex] (analyze.south) -- (average.north);
+      %
+      % Data Analysis --> Data Visualization*
+      %
+      \path[->] node[entity, right of=analyze, align=center] (graph) {Data \\ Graph};
+      \path [draw, thick, -{>[scale=1.25]}, >=Latex] (analyze.east) -- (graph.west);
+      %
+    \end{tikzpicture}
+    %
+    \vspace*{.6in}
+    \begin{center}
+      %
+      \normalsize
+      %
+      \noindent How do we compute the {\em mean} of a list of numbers? \\
+      \noindent How do we compute summary statistics of a list of numbers? \\
+      \noindent What type of function? Recursive? Iterative? Lambda?
+      %
+    \end{center}
+    %
+  \end{figure}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Implementing and Debugging Python Functions}
   %
   \begin{itemize}
