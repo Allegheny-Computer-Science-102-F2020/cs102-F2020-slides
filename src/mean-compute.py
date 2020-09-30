@@ -19,12 +19,12 @@ print(str(compute_mean(numbers)))
 from typing import List
 
 
-def compute_mean(numbers: List):
-    s = sum(numbers)
-    N = len(numbers)
+def compute_mean_again(numbers_list: List):
+    s = sum(numbers_list)
+    N = len(numbers_list)
     mean = s / N
     return mean
 
 
 numbers = [5,5,5,5,5]
-print(str(compute_mean(numbers)))
+print(str(compute_mean_again(numbers)))
