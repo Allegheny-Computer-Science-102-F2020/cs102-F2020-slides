@@ -22,7 +22,20 @@ for this repository. All release numbers in this repository adhere to the
 
 The slides contain the source code of segments of Python programs that a student
 can run in order to learn more about the connection between discrete structures
-and Python programming.
+and Python programming. Here is an outline of the commands that you can type if
+you want to change into the directory that contains these Python programs and
+then run them on your own laptop. Importantly, these commands assume that you
+have already cloned this repository to your laptop.
+
+- Change into the directory that contains the Python source code: `cd src`
+- Run the program that computes the absolute value: `python abs-compute.py`
+- Run the program that computes the factorial sequence: `python factorial-function.py`
+- Run the program that computes the mean of a list of numbers: `python mean-compute.py`
+- Run the program that uses a Newton's method function to compute a square root: `python newtons-method-function.py`
+- Run the program that uses a Newton's method segment to compute a square root: `python newtons-method.py`
+- Run the program that displays a range of integer numbers: `python range-display.py`
+- Run the program that uses higher-order functions to compute a number's square: `python square-function.py`
+
 
 ## Problems or Praise
 
