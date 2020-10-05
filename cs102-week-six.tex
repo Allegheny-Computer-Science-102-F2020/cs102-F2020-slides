@@ -348,6 +348,90 @@ for contact_line in csv.reader(
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Using the CSV Reader in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{python}
+contacts_list = []
+for contact_line in csv.reader(
+    contacts.splitlines(),
+    quotechar='"',
+    delimiter=",",
+    quoting=csv.QUOTE_ALL,
+    skipinitialspace=True,
+):
+    \end{minted}
+  \end{minipage}
+  \vspace*{.1in}
+  \begin{center}
+    %
+    \normalsize \noindent Iterate through each line of the input CSV file and
+    parse it\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Extracting Content from a Line in CSV}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{python}
+current_contact_job = contact_line[1]
+if job_description in
+    current_contact_job.lower():
+    contacts_list.append(contact_line)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.1in}
+  \begin{center}
+    %
+    \normalsize \noindent Extract the current contact's job and see if it
+    matches\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Performing Searches on Job Descriptions}
+  \begin{minipage}{6in}
+    \vspace*{.15in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\small]{text}
+tylernelson@gmail.com,Careers adviser
+gregory02@medina-mayer.com,"Accountant, management"
+jonesmiguel@hotmail.com,Health and safety inspector
+rsanchez@yahoo.com,"Surveyor, planning and development"
+hillfrank@ward-wood.com,"Scientist, physiological"
+aaronhunter@gmail.com,"Surveyor, insurance"
+kylebarnes@hotmail.com,Records manager
+joe70@yahoo.com,Network engineer
+torresjames@white.info,Electrical engineer
+shawkins@watson.com,Science writer
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent What would happen if a person searched for
+    ``adviser''?\\
+    %
+    \normalsize \noindent What would happen if a person searched for
+    ``teacher''?\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Tuples are Worth Billions of Dollars!}
   %
   \begin{itemize}
