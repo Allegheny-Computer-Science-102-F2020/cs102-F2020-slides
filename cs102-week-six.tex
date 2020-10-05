@@ -179,6 +179,107 @@
   %
 \end{frame}
 
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Defining n-Tuples in Python Programs}
+  \normalsize
+  % \hspace*{-.15in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+pair = 3, 4
+quadruple = "Story number", 3,
+              "is", true
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent The same data type is not a requirement for a tuple \\
+    \normalsize \noindent What are the data types of the values in these tuples? \\
+    \normalsize \noindent Is there a more consistent way to encode these tuples? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Details of n-Tuples in Python Programs}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+pair = (3, 4)
+quadruple = ("Story number", 3,
+              "is", true)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent Industry practice is to enclose tuples in parentheses \\
+    \normalsize \noindent How does this make the discrete structure easier to
+    read? \\
+    \normalsize \noindent How does this make the Python program easier to debug? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Special Tuples in the Python Language}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+empty_tuple = ()
+single_story = ("Story",)
+single_number = (3,)
+number = (3)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent Some tuples may not (yet) contain any data in them! \\
+    \normalsize \noindent Singleton tuples must use the comma notation\\
+    \normalsize \noindent What is the difference between a tuple and a number? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Packing and Unpacking Tuples in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+pair = (3,4)
+x, y = pair
+(x, y) = pair
+x, y = y, x
+(x, y) = (y, x)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.1in}
+  \begin{center}
+    %
+    \normalsize \noindent You can ``pack'' and ``unpack'' n-tuples in Python! \\
+    \normalsize \noindent Using optional parentheses improves readability \\
+    \normalsize \noindent What is the purpose of the last two statements? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
 
 % Slide
 %
