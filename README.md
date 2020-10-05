@@ -36,6 +36,44 @@ have already cloned this repository to your laptop.
 - Run the program that displays a range of integer numbers: `python range-display.py`
 - Run the program that uses higher-order functions to compute a number's square: `python square-function.py`
 
+Please note that these are what I would call "Python program segments" in that
+they do not leverage a framework, like Poetry, for building Python applications.
+While these programs will execute and produce output in your terminal window,
+they do not provide either a command-line or a web-based interface. Unless
+stated otherwise, these programs also do not assume that you have any additional
+Python packages installed on your laptop. Finally, these programs contain
+debugging output not listed on the slides, thereby better ensuring that you can
+understand how the program accepts input and produces output. Here is an example
+from running the command `python mean-compute.py` program:
+
+```
+Called compute_mean with numbers = [5, 10, 5, 10, 5]
+Sum of numbers = 35
+Length of numbers = 5
+Calculated mean = 7.0
+7.0
+Called compute_mean with numbers = [5, 1, 7, 99, 4]
+Sum of numbers = 116
+Length of numbers = 5
+Calculated mean = 23.2
+23.2
+5.0
+```
+
+The version of the Python function that contains the debugging output statements
+that produced this output is as follows:
+
+```
+def compute_mean(numbers):
+    print(f"Called compute_mean with numbers = {numbers}")
+    s = sum(numbers)
+    print(f"Sum of numbers = {s}")
+    N = len(numbers)
+    print(f"Length of numbers = {N}")
+    mean = s / N
+    print(f"Calculated mean = {mean}")
+    return mean
+```
 
 ## Problems or Praise
 
