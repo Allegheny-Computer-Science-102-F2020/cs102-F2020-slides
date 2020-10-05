@@ -1,5 +1,3 @@
-#!/bin/python3
-
 def factorial(number: int):
     print(f"Current call factorial({number})")
     if number == 1:

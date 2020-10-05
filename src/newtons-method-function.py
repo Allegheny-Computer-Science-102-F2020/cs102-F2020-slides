@@ -1,5 +1,3 @@
-#!/bin/python3
-
 import math
 
 def sqrt(number: int, tolerance: float):

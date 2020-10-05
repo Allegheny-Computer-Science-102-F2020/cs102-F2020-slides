@@ -1,5 +1,3 @@
-#!/bin/python3
-
 def absone(n):
     if n >= 0:
         return n
