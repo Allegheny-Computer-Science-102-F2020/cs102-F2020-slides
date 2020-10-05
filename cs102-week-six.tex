@@ -282,6 +282,69 @@ x, y = y, x
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Files in Directories Store n-Tuples}
+  \begin{minipage}{6in}
+    \vspace*{.15in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\small]{text}
+tylernelson@gmail.com,Careers adviser
+gregory02@medina-mayer.com,"Accountant, management"
+jonesmiguel@hotmail.com,Health and safety inspector
+rsanchez@yahoo.com,"Surveyor, planning and development"
+hillfrank@ward-wood.com,"Scientist, physiological"
+aaronhunter@gmail.com,"Surveyor, insurance"
+kylebarnes@hotmail.com,Records manager
+joe70@yahoo.com,Network engineer
+torresjames@white.info,Electrical engineer
+shawkins@watson.com,Science writer
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Comma separate value (CSV) are frequently used in
+    business! \\
+    %
+    \normalsize \noindent Input this file of n-tuples into Python? Lists versus
+    tuples? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Parsing CSV Files in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\small]{python}
+contacts_list = []
+for contact_line in csv.reader(
+    contacts.splitlines(),
+    quotechar='"',
+    delimiter=",",
+    quoting=csv.QUOTE_ALL,
+    skipinitialspace=True,
+):
+    current_contact_job = contact_line[1]
+    if job_description in current_contact_job.lower():
+        contacts_list.append(contact_line)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.1in}
+  \begin{center}
+    %
+    \normalsize \noindent Use an iteration construct to create a list of
+    contacts! \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Tuples are Worth Billions of Dollars!}
   %
   \begin{itemize}
@@ -308,9 +371,9 @@ x, y = y, x
       %
       \vspace*{-.2in}
       %
-    \item Can you translate the mathematical descriptions of these summary
-      statistics to Python programs? Can you ensure their correctness? Can you
-      follow industry best practices?
+    \item Since CSV files do not offer enough structure or enforcement,
+      relational databases provide an alternative in a relational database
+      management system (RDBMS).
       %
   \end{itemize}
   %
@@ -323,6 +386,18 @@ x, y = y, x
   \begin{figure}
     \centering
     \includegraphics[scale=.0825]{images/oracle.png}
+    \caption{The figure's caption}
+  \end{figure}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{SQLite Database Management System}
+  %
+  \begin{figure}
+    \centering
+    \includegraphics[scale=.0825]{images/sqlite.png}
     \caption{The figure's caption}
   \end{figure}
   %
