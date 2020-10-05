@@ -18,6 +18,12 @@ cause PDF files to become available in the listing of the
 for this repository. All release numbers in this repository adhere to the
 [Semantic Versioning](http://semver.org/) standard.
 
+## Running Python Programs from the Slides
+
+The slides contain the source code of segments of Python programs that a student
+can run in order to learn more about the connection between discrete structures
+and Python programming.
+
 ## Problems or Praise
 
 If you have any problems with compiling the slides, then please create an
