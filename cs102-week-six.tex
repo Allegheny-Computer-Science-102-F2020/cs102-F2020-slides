@@ -29,7 +29,8 @@
 \definecolor{blue}{RGB}{0, 118, 186}
 \definecolor{gray}{RGB}{146, 146, 146}
 
-\title{Discrete Structures: \\ Ordered Pairs, Tuples, and Monoids in Python}
+\title{Discrete Structures: \\ Practical Applications of Ordered Pairs, Tuples,
+and Lists in Python}
 
 \author{{\bf Gregory M. Kapfhammer}}
 
@@ -50,11 +51,13 @@
   %
   \hspace*{.25in}
   \begin{minipage}{5in}
+  \vspace*{.1in}
   \begin{center}
     %
     {\large How do I employ the mathematical concepts of order pairs, n-tuples,
-      monoids, and sequences to implement efficient Python programs that use
-    higher-order functions with a clearly specified behavior?}
+      and lists to implement efficient Python programs that use
+      functions with a clearly specified behavior to perform tasks like the
+      input and parsing of a comma separated value file?}
     %
   \end{center}
   \end{minipage}
@@ -283,7 +286,7 @@ x, y = y, x
 % Slide
 %
 \begin{frame}[fragile]
-  \frametitle{Files in Directories Store n-Tuples}
+  \frametitle{Files in Directories Can Store n-Tuples}
   \begin{minipage}{6in}
     \vspace*{.15in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\small]{text}
@@ -405,36 +408,40 @@ for contact_line in csv.reader(
 
 % Slide
 %
-\begin{frame}{Implementing and Debugging Python Functions}
+\begin{frame}{Applying n-Tuples and Lists in Python Programs}
   %
   \begin{itemize}
     %
-    \item Use debugging statements to grasp a function's behavior!
+    \item n-tuples and lists are frequently used in Python programs
       %
-      \vspace*{-.15in}
+      \vspace*{-.2in}
       %
-    \item Python functions to perform statistical analysis of data
+    \item Python programs can use CSV files and databases
+      %
+      \vspace*{-.2in}
+      %
+    \item Using n-tuples inside of a Python program:
       %
       \begin{itemize}
         %
-        \item {\bf Q1}: How do you compute the median of a list of numbers?
+        \item {\bf Q1}: What is the difference between a list and a tuple?
           %
-        \item {\bf Q2}: How do you compute the mode of a list of numbers?
+        \item {\bf Q2}: How do you read a CSV file from the file system?
           %
-        \item {\bf Q3}: How do you compute a frequency table of a list of
-          numbers?
+        \item {\bf Q3}: How do you parse a CSV file encoded in a string?
           %
-        \item {\bf Q4}: How do you compute the range of a list of numbers?
+        \item {\bf Q4}: How do you handle the intricacies of real-world CSV
+          files?
           %
-        \item {\bf Q5}: How do you compute the variance and standard deviation?
+        \item {\bf Q5}: How can a Python program connect to a SQLite database?
           %
       \end{itemize}
       %
       \vspace*{-.2in}
       %
-    \item Can you translate the mathematical descriptions of these summary
-      statistics to Python programs? Can you ensure their correctness? Can you
-      follow industry best practices?
+    \item What are the ways in which the  mathematical concept of an n-tuple
+      connects to a wide variety of practical applications in computing,
+      business, and science?
       %
   \end{itemize}
   %
