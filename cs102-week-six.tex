@@ -1,0 +1,147 @@
+\documentclass[14pt,aspectratio=169]{beamer}
+
+\usepackage{pgfpages}
+\usepackage{fancyvrb}
+\usepackage{pgfplots}
+
+\usepackage{minted}
+\usemintedstyle{tango}
+
+\usepackage{amsfonts}
+
+\usepackage{moresize}
+\usepackage{anyfontsize}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{arrows.meta}
+
+\tikzstyle{process}=[rectangle, draw, thick, text width=5em, text centered, minimum height=2.5em, fill=gray!40]
+\tikzstyle{entity}=[rounded rectangle, draw, thick, text width=5em, text centered, minimum height=1.5em, fill=gray!40]
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\setbeamercolor{background canvas}{bg=lightgray}
+
+% define some colors for a consistent theme across slides
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+
+\title{Discrete Structures: \\ Ordered Pairs, Tuples, and Monoids in Python}
+
+\author{{\bf Gregory M. Kapfhammer}}
+
+\institute[shortinst]{{\bf Department of Computer Science, Allegheny College}}
+
+\begin{document}
+
+{
+  \setbeamercolor{page number in head/foot}{fg=background canvas.bg}
+  \begin{frame}
+    \titlepage
+  \end{frame}
+}
+
+%% Slide
+%
+\begin{frame}{Technical Question}
+  %
+  \begin{center}
+    %
+    {\large How do I employ the mathematical concepts of order pairs, n-tuples,
+      monoids, and sequences to implement efficient Python programs that use
+    higher-order functions with a clearly specified behavior?}
+    %
+  \end{center}
+  %
+  \vspace{1ex}
+  %
+  \begin{center}
+    %
+    \small Let's learn how to employ concepts from discrete mathematics to
+    implement efficient Python programs that are rigorously specified!
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Ordered Pairs and n-Tuples}
+  %
+  \begin{itemize}
+    %
+    \item Mathematical concepts yield predictable programs
+      %
+      \vspace*{-.15in}
+      %
+    \item Understanding an ``ordered pair''
+      %
+      \begin{itemize}
+        %
+        \item {\bf Pair}: grouping of two entities
+          %
+        \item {\bf Ordered}: order of entities matters
+          %
+        \item {\bf Ordered Pair}: grouping of two entities for which order
+          matters
+          %
+        \item {\bf Coordinate on Earth}: latitude and longitude are an ordered
+          pair
+          %
+        \item {\bf Complex Numbers}: real and imaginary parts are an ordered
+          pair
+          %
+        \item An ordered pair is not the same as a set of two elements!
+          %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item If we have ordered pairs of entities, can we generalize to
+      an ordered grouping beyond two entities? How?
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Implementing and Debugging Python Functions}
+  %
+  \begin{itemize}
+    %
+    \item Use debugging statements to grasp a function's behavior!
+      %
+      \vspace*{-.15in}
+      %
+    \item Python functions to perform statistical analysis of data
+      %
+      \begin{itemize}
+        %
+        \item {\bf Q1}: How do you compute the median of a list of numbers?
+          %
+        \item {\bf Q2}: How do you compute the mode of a list of numbers?
+          %
+        \item {\bf Q3}: How do you compute a frequency table of a list of
+          numbers?
+          %
+        \item {\bf Q4}: How do you compute the range of a list of numbers?
+          %
+        \item {\bf Q5}: How do you compute the variance and standard deviation?
+          %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item Can you translate the mathematical descriptions of these summary
+      statistics to Python programs? Can you ensure their correctness? Can you
+      follow industry best practices?
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+\end{document}
