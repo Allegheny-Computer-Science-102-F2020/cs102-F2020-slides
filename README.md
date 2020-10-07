@@ -35,6 +35,7 @@ have already cloned this repository to your laptop.
 - Run the program that uses a Newton's method segment to compute a square root: `python newtons-method.py`
 - Run the program that displays a range of integer numbers: `python range-display.py`
 - Run the program that uses higher-order functions to compute a number's square: `python square-function.py`
+- Run the program that performs string multiple types of concatenation: `python string-concatenation.py`
 
 Please note that these are what I would call "Python program segments" in that
 they do not leverage a framework, like Poetry, for building Python applications.
