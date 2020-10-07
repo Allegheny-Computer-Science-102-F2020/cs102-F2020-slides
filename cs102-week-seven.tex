@@ -203,6 +203,58 @@ print(f"The message is: {message}")
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Empty String Concatenation in Python}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+world = "world"
+empty = ""
+message = empty + world
+print(f"The message is: {message}")
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent The {\tt empty} variable is an identity string \\
+    %
+    \normalsize \noindent What is the output of this program segment? \\
+    %
+    \normalsize \noindent What if we switched the order of the concatenation? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Reversed Empty String Concatenation in Python}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+world = "world"
+empty = ""
+message = world + empty
+print(f"The message is: {message}")
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent What is the output of this program segment? \\
+    %
+    \normalsize \noindent Can we generalize these observations about strings? \\
+    %
+    \normalsize \noindent Define new discrete structure with predictable properties? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Applying n-Tuples and Lists in Python Programs}
   %
   \begin{itemize}
