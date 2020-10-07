@@ -154,27 +154,23 @@ Lists in Python}
 % Slide
 %
 \begin{frame}[fragile]
-  \frametitle{Practical Applications of Ordered Pairs}
-  % \hspace*{-.15in}
+  \frametitle{String Concatenation in Python}
   \begin{minipage}{6in}
     \vspace*{.25in}
-    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
-(40.7580° N, 73.9855° W)
-  Times Square
-(60.1699° N, 24.9384° E)
-  Helsinki, Finland
-(90.0° N, 135.0000° W)
-  North Pole
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+hello = "hello"
+world = "world"
+space = " "
+message = hello + space + world
+print(f"The message is: {message}")
     \end{minted}
   \end{minipage}
   \vspace*{.05in}
   \begin{center}
     %
-    \normalsize \noindent Latitude and longitude provide a ``global address''
-    for a location\\
+    \normalsize \noindent You can concatenate or ``glue together'' strings \\
     %
-    \normalsize \noindent Why does the order matter for these pairs of location
-    data?\\
+    \normalsize \noindent What would happen if you picked a different order?\\
     %
   \end{center}
   %
