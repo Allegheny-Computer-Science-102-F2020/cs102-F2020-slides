@@ -17,12 +17,12 @@ print("")
 
 message = empty + world
 
-print("Second example of string concatenation 😲")
+print("Third example of string concatenation 😲")
 print(f"The message is: {message}")
 print("")
 
 message = world + empty
 
-print("Second example of string concatenation 😲")
+print("Fourth example of string concatenation 😲")
 print(f"The message is: {message}")
 print("")
