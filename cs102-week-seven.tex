@@ -255,6 +255,46 @@ print(f"The message is: {message}")
 
 % Slide
 %
+\begin{frame}{Characterizing String Concatenation in Python}
+  %
+  \begin{itemize}
+    %
+    \item Define $S$ to be the set of all possible strings
+      %
+      \vspace*{-.15in}
+      %
+    \item What properties of $S$ are always true?
+      %
+      \begin{itemize}
+        %
+        \item For $s_1, s_2 \in S$ and the concatenation operator ``$+$'', $s_1
+          + s_2 \in S$
+          %
+        \item For $s_1, s_2 \in S$ and the concatenation operator ``$+$'', $s_2
+          + s_1 \in S$
+          %
+        \item For $s_1, s_2, s_3 \in S$, ``$+$'' is associative: $(s_1 + s_2) +
+          s_3 = s_1 + (s_2 + s_3)$
+          %
+        \item For $s_1, s_2, \in S$, ``$+$'' is not commutative: $(s_1 + s_2)
+          \neq s_2 + s_1$
+          %
+        \item For $s_1, s_2, \in S$, if $s_1 = s_2$ or either $s_1 = \epsilon$,
+          then ``$+$'' is commutative
+          %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item These properties of strings help us to generalize and understand
+      their behavior! Let's explore further!
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Applying n-Tuples and Lists in Python Programs}
   %
   \begin{itemize}
