@@ -405,6 +405,122 @@ print(f"The message is: {message}")
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Sums of Lists in Python}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+standard_list = [1, 2, 3, 4, 5]
+reversed_list = [5, 4, 3, 2, 1]
+
+sum_list = sum(standard_list)
+sum_reversed_list = sum(reversed_list)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent What is the output of this program segment? \\
+    %
+    \normalsize \noindent This code demonstrates the behavior of the $\sum$
+    operator \\
+    %
+    \normalsize \noindent You can sum numbers in any order and get the same
+    answer! \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Products of Lists in Python}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+import math
+standard_list = [1, 2, 3, 4, 5]
+reversed_list = [5, 4, 3, 2, 1]
+product_list = math.prod(standard_list)
+product_reversed_list =
+    math.prod(reversed_list)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent This code demonstrates the behavior of the $\prod$
+    operator \\
+    %
+    \normalsize \noindent Multiplying numbers in any order and gets the same
+    answer! \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Should I Use a List or a Tuple for Storage?}
+  \begin{minipage}{6in}
+    \vspace*{.15in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{text}
+1970-01-01,81.342
+1971-01-01,83.300
+1972-01-01,84.700
+1973-01-01,85.500
+1974-01-01,86.100
+1975-01-01,87.000
+1976-01-01,87.600
+1977-01-01,87.600
+1978-01-01,88.000
+1979-01-01,88.100
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent CSV file stores ordered pairs of dates and
+    population counts\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using Mutable Lists in Python}
+  \begin{minipage}{6in}
+    \vspace*{.15in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+
+  data_number_list = []
+  for line in data_text.splitlines():
+      ordered_pair = line.split(",")
+      data_number_list.append(float(
+              ordered_pair[1]))
+  return data_number_list
+
+    \end{minted}
+  \end{minipage}
+  %
+  \vspace*{.025in}
+    %
+  \begin{center}
+    %
+    \normalsize \noindent Both lists and tuples and examples of sequences! \\
+    %
+    \normalsize \noindent What are the differences between lists and tuples? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Applying n-Tuples and Lists in Python Programs}
   %
   \begin{itemize}
