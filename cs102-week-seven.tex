@@ -558,6 +558,89 @@ product_reversed_list =
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Using the Map Function with a Literal Tuple}
+  \begin{minipage}{6in}
+    \vspace*{.15in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{python}
+def square(value):
+    return value * value
+
+def map(f, sequence):
+    result = (  )
+    for element in sequence:
+        result += ( f(element), )
+    return result
+
+squared = map(square, (2, 3, 5, 7, 11))
+print(squared)
+    \end{minted}
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using the Map Function with a Sequence}
+  \begin{minipage}{6in}
+    \vspace*{.15in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{python}
+def square(value):
+    return value * value
+
+def map(f, sequence):
+    result = (  )
+    for element in sequence:
+        result += ( f(element), )
+    return result
+
+squared_range = map(square, range(10))
+print(squared_range)
+    \end{minted}
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Higher-Order Sequence Functions}
+  %
+  \begin{itemize}
+    %
+    \item Define higher-order functions that work for any sequence
+      %
+      \vspace*{-.15in}
+      %
+    \item These functions should work for lists, ordered pairs, tuples
+      %
+      \begin{itemize}
+        %
+        \item {\tt map}: Apply a function to every element of a sequence
+          %
+        \item {\tt filter}: Apply a boolean function to every element of a
+          sequence, returning only those matching the filter's rules
+          %
+        \item {\tt reduce}: Apply a function that acts like a binary operator to
+          a sequence of values, combining them to a single value
+          %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item These three operators give a vocabulary for implementing complex
+      programs in a functional programming style
+      %
+      \vspace*{-.2in}
+      %
+    \item Let's explore each of these operators in greater detail!
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Applying n-Tuples and Lists in Python Programs}
   %
   \begin{itemize}
