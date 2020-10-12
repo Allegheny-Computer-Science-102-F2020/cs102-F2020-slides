@@ -644,36 +644,51 @@ print(list(filtered_odd))
 
 % Slide
 %
-\begin{frame}{Higher-Order Sequence Functions}
+\begin{frame}[fragile]
+  \frametitle{Summations Through the Application of Reduce}
+  \begin{minipage}{6in}
+    \vspace*{.15in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{python}
+def plus(number_one, number_two):
+    return number_one + number_two
+
+def reduce(f, sequence, initial):
+    result = initial
+    for value in sequence:
+        result = f(result, value)
+    return result
+
+numbers = [1, 2, 3, 4, 5]
+added_numbers = reduce(plus, numbers, 0)
+    \end{minted}
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Connecting Monoids and Map-Reduce-Filter}
   %
   \begin{itemize}
     %
-    \item Define higher-order functions that work for any sequence
+    \item These higher-order sequence functions are independent and free of
+      ``side effects'' and thus can be parallelized
       %
       \vspace*{-.15in}
       %
-    \item These functions should work for lists, ordered pairs, tuples
+    \item Since a monoid has the associativity property we can apply the {\tt
+      map}, {\tt filter}, and {\tt reduce} operators in parallel and then
+      combine the solution, often achieving a speedup
       %
-      \begin{itemize}
-        %
-        \item {\tt map}: Apply a function to every element of a sequence
-          %
-        \item {\tt filter}: Apply a boolean function to every element of a
-          sequence, returning only those matching the filter's rules
-          %
-        \item {\tt reduce}: Apply a function that acts like a binary operator to
-          a sequence of values, combining them to a single value
-          %
-      \end{itemize}
-      %
-      \vspace*{-.2in}
+      \vspace*{-.15in}
       %
     \item These three operators give a vocabulary for implementing complex
       programs in a functional programming style
       %
-      \vspace*{-.2in}
+      \vspace*{-.15in}
       %
-    \item Let's explore each of these operators in greater detail!
+    \item Parallel computation is important given the diminishing
+      returns associated with sequential computation
       %
   \end{itemize}
   %
@@ -681,38 +696,37 @@ print(list(filtered_odd))
 
 % Slide
 %
-\begin{frame}{Applying n-Tuples and Lists in Python Programs}
+\begin{frame}{Applying Monoids in Python Programs}
   %
   \begin{itemize}
     %
-    \item n-tuples and lists are frequently used in Python programs
+    \item Monoids are frequently used in Python programs
       %
       \vspace*{-.2in}
       %
-    \item Python programs can use CSV files and databases
+    \item Python programs can use higher-order sequence functions
       %
       \vspace*{-.2in}
       %
-    \item Using n-tuples inside of a Python program:
+    \item Using monoids and sequence functions in Python:
       %
       \begin{itemize}
         %
         \item {\bf Q1}: What is the difference between a list and a tuple?
           %
-        \item {\bf Q2}: How do you read a CSV file from the file system?
+        \item {\bf Q2}: How does a monoid generalize strings and integers?
           %
-        \item {\bf Q3}: How do you parse a CSV file encoded in a string?
+        \item {\bf Q3}: How do higher-order sequence functions use monoids?
           %
-        \item {\bf Q4}: How do you handle the intricacies of real-world CSV
-          files?
+        \item {\bf Q4}: How can map-filter-reduce support parallel programming?
           %
-        \item {\bf Q5}: How can a Python program connect to a SQLite database?
+        \item {\bf Q5}: What type of speedup will a parallel program achieve?
           %
       \end{itemize}
       %
       \vspace*{-.2in}
       %
-    \item What are the ways in which the  mathematical concept of an n-tuple
+    \item What are the ways in which the mathematical concept of a monoid
       connects to a wide variety of practical applications in computing,
       business, and science?
       %
