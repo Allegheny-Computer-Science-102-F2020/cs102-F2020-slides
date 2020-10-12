@@ -604,6 +604,46 @@ print(squared_range)
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Filtering Even Numbers from a Tuple}
+  \begin{minipage}{6in}
+    \vspace*{.15in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+def is_even(value):
+    if value % 2 == 0:
+        return True
+    return False
+
+filtered_even = filter(is_even,
+    (2, 3, 5, 7, 11))
+print(list(filtered_even))
+    \end{minted}
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Filtering Odd Numbers from a Tuple}
+  \begin{minipage}{6in}
+    \vspace*{.15in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+def is_odd(value):
+    if value % 2 == 1:
+        return True
+    return False
+
+filtered_odd = filter(is_odd,
+    (2, 3, 5, 7, 11))
+print(list(filtered_odd))
+    \end{minted}
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Higher-Order Sequence Functions}
   %
   \begin{itemize}
