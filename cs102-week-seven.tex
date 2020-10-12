@@ -333,6 +333,78 @@ print(f"The message is: {message}")
 
 % Slide
 %
+\begin{frame}{Understanding the Monoid Discrete Structure}
+  %
+  \begin{itemize}
+    %
+    \item A monoid is an ordered pair $(S, \otimes)$ for a set $S$ and any
+      binary operator $\otimes$ that satisfies the following conditions:
+      %
+      \begin{itemize}
+        %
+        \item {\bf Type Preservation}: $\forall s_1, s_2 \in S$, $s_1 \otimes
+          s_2 \in S$
+          %
+        \item {\bf Associative Property}: $\forall s_1, s_2, s_3 \in S$, $(s_1
+          \otimes s_2) \otimes s_3 = s_1 \otimes (s_2 \otimes s_3)$
+          %
+        \item {\bf Identity Element}: $\exists \epsilon \in S$, such that
+          $\forall s \in S, \epsilon \otimes s = s$ and $s \otimes \epsilon = s$
+          %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item We often say that $S$ is a monoid under $\otimes$ with identity
+      $\epsilon$
+      %
+      \vspace*{-.2in}
+      %
+    \item If this is confusing, remember that the discrete structure called a
+      monoid is a generalization of strings and integers!
+      %
+      \vspace*{-.2in}
+      %
+    \item If you know how strings behave then you understand the monoid;
+      ``monoid'' describes ``string like'' structures
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Applying the Monoid Discrete Structure}
+  %
+  \begin{itemize}
+    %
+    \item Monoids frequently exist inside of our Python programs!
+      %
+      \vspace*{-.2in}
+      %
+    \item Monoids give a vocabulary to describe discrete structures
+      %
+      \vspace*{-.2in}
+      %
+    \item Saying that a structure ``is a monoid under a specific identity''
+      gives us a precise understanding of its behavior
+      %
+      \vspace*{-.2in}
+      %
+    \item Knowing that a discrete structure is a monoid means that we can assume
+      that associativity holds for its operator
+      %
+      \vspace*{-.2in}
+      %
+    \item That is why, for integers, we can have ``big operators'' like $\sum$
+      for adding numbers and $\prod$ for multiplying numbers
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Applying n-Tuples and Lists in Python Programs}
   %
   \begin{itemize}
