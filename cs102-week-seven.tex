@@ -247,7 +247,7 @@ print(f"The message is: {message}")
     %
     \normalsize \noindent Can we generalize these observations about strings? \\
     %
-    \normalsize \noindent Define new discrete structure with predictable properties? \\
+    \normalsize \noindent Define a new discrete structure with predictable properties? \\
     %
   \end{center}
   %
@@ -270,9 +270,6 @@ print(f"The message is: {message}")
         \item For $s_1, s_2 \in S$ and the concatenation operator ``$+$'', $s_1
           + s_2 \in S$
           %
-        \item For $s_1, s_2 \in S$ and the concatenation operator ``$+$'', $s_2
-          + s_1 \in S$
-          %
         \item For $s_1, s_2, s_3 \in S$, ``$+$'' is associative: $(s_1 + s_2) +
           s_3 = s_1 + (s_2 + s_3)$
           %
@@ -286,8 +283,13 @@ print(f"The message is: {message}")
       %
       \vspace*{-.2in}
       %
-    \item These properties of strings help us to generalize and understand
-      their behavior! Let's explore further!
+    \item These properties of strings help us to generalize and understand their
+      behavior! Let's explore further!
+      %
+      \vspace*{-.2in}
+      %
+    \item The monoid discrete structure generalizes data that behaves like
+      strings in the Python programming language
       %
   \end{itemize}
   %
@@ -355,8 +357,8 @@ print(f"The message is: {message}")
       %
       \vspace*{-.2in}
       %
-    \item We often say that $S$ is a monoid under $\otimes$ with identity
-      $\epsilon$
+    \item We often say that ``$S$ is a monoid under $\otimes$ with identity
+      $\epsilon$''
       %
       \vspace*{-.2in}
       %
@@ -366,7 +368,7 @@ print(f"The message is: {message}")
       \vspace*{-.2in}
       %
     \item If you know how strings behave then you understand the monoid;
-      ``monoid'' describes ``string like'' structures
+      ``monoid'' describes ``string-like'' structures
       %
   \end{itemize}
   %
@@ -453,7 +455,7 @@ product_reversed_list =
     \normalsize \noindent This code demonstrates the behavior of the $\prod$
     operator \\
     %
-    \normalsize \noindent Multiplying numbers in any order and gets the same
+    \normalsize \noindent Multiplying numbers in any order gets the same
     answer! \\
     %
   \end{center}
@@ -476,7 +478,6 @@ product_reversed_list =
 1976-01-01,87.600
 1977-01-01,87.600
 1978-01-01,88.000
-1979-01-01,88.100
     \end{minted}
   \end{minipage}
   \vspace*{.05in}
@@ -511,7 +512,7 @@ product_reversed_list =
     %
   \begin{center}
     %
-    \normalsize \noindent Both lists and tuples and examples of sequences! \\
+    \normalsize \noindent Both lists and tuples are examples of sequences! \\
     %
     \normalsize \noindent What are the differences between lists and tuples? \\
     %
@@ -667,7 +668,7 @@ added_numbers = reduce(plus, numbers, 0)
 
 % Slide
 %
-\begin{frame}{Connecting Monoids and Map-Reduce-Filter}
+\begin{frame}{Connecting Monoids and Map-Filter-Reduce}
   %
   \begin{itemize}
     %
@@ -727,7 +728,7 @@ added_numbers = reduce(plus, numbers, 0)
       \vspace*{-.2in}
       %
     \item What are the ways in which the mathematical concept of a monoid
-      connects to a wide variety of practical applications in the fields of
+      connects to a wide variety of practical applications in the area of
       efficient and parallel computing?
       %
   \end{itemize}
