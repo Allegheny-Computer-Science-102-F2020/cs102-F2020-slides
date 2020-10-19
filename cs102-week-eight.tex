@@ -389,36 +389,39 @@ def fibonacci_list(n):
 
 % Slide
 %
-\begin{frame}{Comparing Sequences and n-Tuples in Python}
+\begin{frame}{Functions with Generators, Tuples, and Lists}
   %
   \begin{itemize}
     %
-    \item Are sequences and n-tuples the same? Are they different?
+    \item Remember, each function produces the same final output!
       %
       \vspace*{-.15in}
       %
-    \item Understanding the properties of n-tuples and sequences:
+    \item Behavior and memory use differs for each function type
+      %
+      \vspace*{-.15in}
+      %
+    \item Understanding the properties of function types:
       %
       \begin{itemize}
         %
-        \item Both n-tuples and sequences are ordered collections
-        %
-        \item Sequences are normally composed of the same type of data
-        %
-        \item n-tuples are not required to contain the same type of data
-        %
-        \item Sequences are not theoretically bounded in their size
-        %
-        \item n-tuples are theoretically bounded in their size
-        %
-        \item Both sequences and n-tuples are practically bounded in size
-        %
+        \item {\bf Generator}: caller pulls values from the function
+          %
+        \item {\bf Tuple}: function pushes values to the caller
+          %
+        \item {\bf List}: function also pushes values to the caller
+          %
       \end{itemize}
       %
       \vspace*{-.2in}
       %
-    \item Do different types of sequences have common properties and behavior?
-      Can we more generally understand them?
+    \item If a computer's memory was constrained, what would be the best
+      approach? The worst approach? Why?
+      %
+      \vspace*{-.2in}
+      %
+    \item Remember, the generation approach can use either an expression or a
+      function. How to pick one of these?
       %
   \end{itemize}
   %
