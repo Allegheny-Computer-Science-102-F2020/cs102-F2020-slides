@@ -237,6 +237,29 @@ for value in even_squares:
 % Slide
 %
 \begin{frame}[fragile]
+  \frametitle{Exhausting a Generator Expression}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.2in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+even_squares =
+  (x * x for x in range(10)
+             if x % 2 == 0)
+
+for value in even_squares:
+    print(value)
+
+for value in even_squares:
+    print(value)
+    \end{minted}
+    %
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
   \frametitle{Using Generator Functions in Python}
   \normalsize
   \begin{minipage}{6in}
