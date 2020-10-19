@@ -242,14 +242,14 @@ for value in even_squares:
   \begin{minipage}{6in}
     \vspace*{.1in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
-def fibonacci_sequence(n):
+def fibonacci_generator(n):
     a = 1
     b = 1
     for i in range(n):
         yield a
         a, b = b, a + b
 
-for value in fibonacci_sequence(10):
+for value in fibonacci_generator(10):
     print(fibonacci_value, end=" ")
     \end{minted}
     %
@@ -266,7 +266,7 @@ for value in fibonacci_sequence(10):
     \vspace*{.1in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
 
-<function fibonacci_sequence
+<function fibonacci_generator
   at 0x7f791d4bb1f0>
 
 1 1 2 3 5 8 13 21 34 55
@@ -279,6 +279,57 @@ for value in fibonacci_sequence(10):
     \normalsize \noindent Generator functions versus generator expressions? \\
     \normalsize \noindent Can you find the pattern in these numbers? \\
     \normalsize \noindent Benefits of generator expressions and functions? \\
+    %
+  \end{center}
+  %
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using Functions and Tuples in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.1in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+def fibonacci_tuple(n):
+    result = ( )
+    a = 1
+    b = 1
+    for i in range(n):
+        result += (a,)
+        a, b = b, a + b
+    return result
+    \end{minted}
+    %
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Output from a Tuple Function in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.1in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
+<function fibonacci_tuple
+  at 0x7f6e976b61f0>
+
+1 1 2 3 5 8 13 21 34 55
+
+    \end{minted}
+    %
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent What is this the output of the program segment? \\
+    \normalsize \noindent Generator functions versus tuple functions? \\
+    \normalsize \noindent Notice that this function produces the same output! \\
+    \normalsize \noindent Drawbacks of tuple creation functions? \\
     %
   \end{center}
   %
