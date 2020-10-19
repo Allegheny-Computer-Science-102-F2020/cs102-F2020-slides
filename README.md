@@ -40,6 +40,11 @@ have already cloned this repository to your laptop.
 - Run the program that demonstrates the map function: `python map-function.py`
 - Run the program that demonstrates the filter function: `python filter-function.py`
 - Run the program that demonstrates the reduce function: `python reduce-function.py`
+- Run the program that demonstrates a generator expression: `python generate-even-squares.py`
+- Run the program that demonstrates a generator function for the Fibonacci sequence: `python fibonacci-generator.py`
+- Run the program that demonstrates a list function for the Fibonacci sequence: `python fibonacci-list.py`
+- Run the program that demonstrates a tuple function for the Fibonacci sequence: `python fibonacci-tuple.py`
+- Run the program that generates and endless stream of integers: `python endless-stream.py`
 
 Please note that these are what I would call "Python program segments" in that
 they do not leverage a framework, like Poetry, for building Python applications.
