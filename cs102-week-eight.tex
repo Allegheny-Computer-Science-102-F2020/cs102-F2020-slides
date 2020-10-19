@@ -339,6 +339,56 @@ def fibonacci_tuple(n):
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Using Functions and List in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.1in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+def fibonacci_list(n):
+    result = [  ]
+    a = 1
+    b = 1
+    for i in range(n):
+        result += (a,)
+        a, b = b, a + b
+    return result
+    \end{minted}
+    %
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Output from a List Function in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.1in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
+<function fibonacci_list
+  at 0x7f8daf1051f0>
+
+1 1 2 3 5 8 13 21 34 55
+    \end{minted}
+    %
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent What is this the output of the program segment? \\
+    \normalsize \noindent Generator functions versus list functions? \\
+    \normalsize \noindent Notice that this function produces the same output! \\
+    \normalsize \noindent Drawbacks of list creation functions? \\
+    %
+  \end{center}
+  %
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Comparing Sequences and n-Tuples in Python}
   %
   \begin{itemize}
