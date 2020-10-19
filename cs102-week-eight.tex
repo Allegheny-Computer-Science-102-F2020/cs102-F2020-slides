@@ -81,7 +81,7 @@
   %
   \begin{itemize}
     %
-    \item Sequences and streams are evidentevident  in Python programs!
+    \item Sequences and streams are evident in Python programs!
       %
       \vspace*{-.15in}
       %
@@ -429,39 +429,90 @@ def fibonacci_list(n):
 
 % Slide
 %
-\begin{frame}{Applying Monoids in Python Programs}
+\begin{frame}[fragile]
+  \frametitle{Endless Streams in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.1in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+def integers(n):
+    while True:
+        yield n
+        n += 1
+
+for value in integers(10):
+    print(value)
+    \end{minted}
+    %
+  \end{minipage}
+  %
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Does this function ever stop running? \\
+    \normalsize \noindent What is the output of this program? \\
+    %
+  \end{center}
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Output of an Endless Streams Python Program}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.1in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
+441027
+441028
+441029
+441030
+^C441031
+Traceback (most recent call last):
+  File "endless-stream.py", line 7,
+  in <module> print(value)
+KeyboardInterrupt
+    \end{minted}
+    %
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Using Streams in Python Programs}
   %
   \begin{itemize}
     %
-    \item Monoids are frequently used in Python programs
+    \item Python programs frequently generate streams of values
       %
       \vspace*{-.2in}
       %
-    \item Python programs can use higher-order sequence functions
+    \item Using streams enables the program to be memory efficient
       %
       \vspace*{-.2in}
       %
-    \item Using monoids and higher-order sequence functions:
+    \item Using tuples, lists, and streams in Python programs:
       %
       \begin{itemize}
         %
         \item {\bf Q1}: What is the difference between a list and a tuple?
           %
-        \item {\bf Q2}: How does a monoid generalize strings and integers?
+        \item {\bf Q2}: What is the difference between a list and stream?
           %
-        \item {\bf Q3}: How do higher-order sequence functions use monoids?
+        \item {\bf Q3}: What is the difference between a tuple and a stream?
           %
-        \item {\bf Q4}: How can map-filter-reduce support parallel programming?
+        \item {\bf Q4}: How can you concatenate streams into a new stream?
           %
-        \item {\bf Q5}: What type of speedup will a parallel program achieve?
+        \item {\bf Q5}: How do streams aid distributed programming in Python?
           %
       \end{itemize}
       %
       \vspace*{-.2in}
       %
-    \item What are the ways in which the mathematical concept of a monoid
-      connects to a wide variety of practical applications in the area of
-      efficient and parallel computing?
+    \item How does the stream discrete structure give us more flexibility as
+      programmers? How does it enable us to implement memory efficient programs
+      in Python?
       %
   \end{itemize}
   %
