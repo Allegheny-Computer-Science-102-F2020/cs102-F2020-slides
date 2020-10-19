@@ -81,7 +81,7 @@
   %
   \begin{itemize}
     %
-    \item Sequences are commonly found in Python programs!
+    \item Sequences and streams are evidentevident  in Python programs!
       %
       \vspace*{-.15in}
       %
@@ -214,7 +214,7 @@ for value in even_squares:
 % Slide
 %
 \begin{frame}[fragile]
-  \frametitle{Output from a Generator Function}
+  \frametitle{Output from a Generator Expression in Python}
   \normalsize
   \hspace*{.1in}
   \begin{minipage}{6in}
@@ -230,6 +230,58 @@ for value in even_squares:
 64
     \end{minted}
     %
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using Generator Functions in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.1in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+def fibonacci_sequence(n):
+    a = 1
+    b = 1
+    for i in range(n):
+        yield a
+        a, b = b, a + b
+
+for value in fibonacci_sequence(10):
+    print(fibonacci_value, end=" ")
+    \end{minted}
+    %
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Output from a Generator Function in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.1in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
+
+<function fibonacci_sequence
+  at 0x7f791d4bb1f0>
+
+1 1 2 3 5 8 13 21 34 55
+    \end{minted}
+    %
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent What is this the output of the program segment? \\
+    \normalsize \noindent Generator functions versus generator expressions? \\
+    \normalsize \noindent Can you find the pattern in these numbers? \\
+    \normalsize \noindent Benefits of generator expressions and functions? \\
+    %
+  \end{center}
+  %
   \end{minipage}
   %
 \end{frame}
