@@ -3,7 +3,7 @@ def fibonacci_list(n):
     a = 1
     b = 1
     for i in range(n):
-        result += (a,)
+        result.append(a)
         a, b = b, a + b
     return result
 
