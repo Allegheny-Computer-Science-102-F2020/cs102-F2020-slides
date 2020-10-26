@@ -530,6 +530,28 @@ print(list(even_positives))
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Boolean Logic in Set Comprehensions}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+odd_positives_two =
+        {n for n in range(20)
+         if n % 2 == 1 or n == 2}
+
+for value in odd_positives_two:
+    print(value)
+
+print(list(odd_positives_two))
+    \end{minted}
+    %
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Using Streams in Python Programs}
   %
   \begin{itemize}
