@@ -197,6 +197,35 @@ Set defined with a tuple:
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Python's Sets Store Immutable Elements}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+
+x = {53, 'pencil',
+     (1, 1, 2, 3, 5), 3.14159}
+
+print("Set with multiple types:")
+print(x)
+
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Note the different style for creation \\
+    \normalsize \noindent The data types in this set are different \\
+    \normalsize \noindent All of the variables in this set are immutable \\
+    \normalsize \noindent How will this program display the elements of the set? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Using Streams in Python Programs}
   %
   \begin{itemize}
