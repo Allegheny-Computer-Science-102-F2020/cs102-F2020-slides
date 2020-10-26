@@ -18,3 +18,10 @@ print()
 print("Intersection of the sets:")
 print(a.intersection(b, c, d))
 print(a & b & c & d)
+
+print()
+
+# difference
+print("Difference of the sets:")
+print(a.difference(b, c))
+print(a - b - c)
