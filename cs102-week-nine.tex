@@ -391,6 +391,33 @@ print(a | b | c | d)
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Using the Set Intersection Operator in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+a = {1, 2, 3, 4}
+b = {2, 3, 4, 5}
+c = {3, 4, 5, 6}
+d = {4, 5, 6, 7}
+
+print(a.intersection(b, c, d))
+print(a & b & c & d)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Sets in Python provide useful operations like {\tt
+    intersection}! \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Using Streams in Python Programs}
   %
   \begin{itemize}
