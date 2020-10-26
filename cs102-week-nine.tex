@@ -476,6 +476,60 @@ Difference of the sets:
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Set Comprehensions in Python: Odd Positives}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+odd_positives = {n for n in range(100)
+                 if n % 2 == 1}
+
+for odd_positive in odd_positives:
+    print(odd_positive)
+
+print(list(odd_positives))
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Modular arithmetic helps us determine when a number is
+    odd\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Set Comprehensions in Python: Even Positives}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+even_positives = {n for n in range(100)
+                  if n % 2 == 0}
+
+for even_positive in even_positives:
+    print(even_positive)
+
+print(list(even_positives))
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Modular arithmetic helps us determine when a number is
+    even\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Using Streams in Python Programs}
   %
   \begin{itemize}
