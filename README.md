@@ -45,6 +45,11 @@ have already cloned this repository to your laptop.
 - Run the program that demonstrates a list function for the Fibonacci sequence: `python fibonacci-list.py`
 - Run the program that demonstrates a tuple function for the Fibonacci sequence: `python fibonacci-tuple.py`
 - Run the program that generates and endless stream of integers: `python endless-stream.py`
+- Run the program that demonstrates how to create sets: `python set-creation-examples.py`
+- Run the program that demonstrates how to create sets with different elements: `python set-element-types.py`
+- Run the program that uses the different set operations: `python set-operations.py`
+- Run the program that demonstrates the use of set comprehensions: `python set-comprehension.py`
+- Run the program that demonstrates the use of set comprehensions and Boolean logic: `python set-comprehension-logical.py`
 
 Please note that these are what I would call "Python program segments" in that
 they do not leverage a framework, like Poetry, for building Python applications.
