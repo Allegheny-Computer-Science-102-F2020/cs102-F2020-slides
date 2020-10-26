@@ -531,7 +531,7 @@ print(list(even_positives))
 % Slide
 %
 \begin{frame}[fragile]
-  \frametitle{Boolean Logic in Set Comprehensions}
+  \frametitle{Boolean Logic and Sets: Using ``Logical Or''}
   \normalsize
   \begin{minipage}{6in}
     \vspace*{.25in}
@@ -544,6 +544,28 @@ for value in odd_positives_two:
     print(value)
 
 print(list(odd_positives_two))
+    \end{minted}
+    %
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Boolean Logic and Sets: Using ``Logical And''}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+even_positives_by_four =
+     {n for n in range(20)
+      if n % 2 == 0 and n % 4 == 0}
+
+for value in even_positives_by_four:
+    print(value)
+
+print(list(even_positives_by_four))
     \end{minted}
     %
   \end{minipage}
