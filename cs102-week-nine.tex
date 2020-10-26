@@ -117,23 +117,23 @@
 % Slide
 %
 \begin{frame}[fragile]
-  \frametitle{File Input Involves the Use of Streams}
+  \frametitle{Creating a Set from a List}
   \normalsize
-  \hspace*{-.65in}
+  % \hspace*{-.25in}
   \begin{minipage}{6in}
     \vspace*{.25in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
-    file = open("emails")
-    for line in file:
-      name, email = line.split(",")
-      if name == "John Davis":
-        print(email)
+x = set(['pencil', 'paper', 'pen',
+         'pencil', 'wallet', 'pen'])
+
+print("Set defined with a list:")
+print(x)
     \end{minted}
   \end{minipage}
   \vspace*{.25in}
   \begin{center}
     %
-    \normalsize \noindent The file is a sequence of characters \\
+    \normalsize \noindent What is the output of this program? \\
     \normalsize \noindent A character is a sequence of numbers \\
     \normalsize \noindent Does the entire file exist in the computer's
     memory? \\
