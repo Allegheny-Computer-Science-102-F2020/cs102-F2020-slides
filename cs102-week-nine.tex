@@ -352,8 +352,8 @@ TypeError: unhashable type: 'list'
       \vspace*{-.15in}
       %
     \item Different programming languages and packages have other restrictions.
-      For instance, Python programs cannot create sets that contain mutable
-      elements like lists!
+      For instance, recall that Python programs cannot create sets that contain
+      mutable elements like lists!
       %
       \vspace*{-.15in}
       %
@@ -553,6 +553,35 @@ print(list(odd_positives_two))
 % Slide
 %
 \begin{frame}[fragile]
+  \frametitle{Output of the Program Using ``Logical Or''}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.15in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
+1
+2
+3
+[...]
+19
+
+[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+    \end{minted}
+    %
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Either of the conditions must be true for logical
+    {\tt or} operator!\\
+    %
+  \end{center}
+  %
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
   \frametitle{Boolean Logic and Sets: Using ``Logical And''}
   \normalsize
   \begin{minipage}{6in}
@@ -574,39 +603,67 @@ print(list(even_positives_by_four))
 
 % Slide
 %
-\begin{frame}{Using Streams in Python Programs}
+\begin{frame}[fragile]
+  \frametitle{Output of the Program Using ``Logical And''}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.15in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
+0
+4
+8
+12
+16
+
+[0, 4, 8, 12, 16]
+    \end{minted}
+    %
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Both of the conditions must be true for logical
+    {\tt and} operator!\\
+    %
+  \end{center}
+  %
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Using Sets in Python Programs}
   %
   \begin{itemize}
     %
-    \item Python programs frequently generate streams of values
+    \item Sets are a discrete structure with many practical benefits!
       %
       \vspace*{-.2in}
       %
-    \item Using streams enables the program to be memory efficient
+    \item Sets have built-in operations that make programming easy
       %
       \vspace*{-.2in}
       %
-    \item Using tuples, lists, and streams in Python programs:
+    \item Using sets and Boolean logic in Python programs:
       %
       \begin{itemize}
         %
-        \item {\bf Q1}: What is the difference between a list and a tuple?
+        \item {\bf Q1}: What are the characteristics of a set?
           %
-        \item {\bf Q2}: What is the difference between a list and stream?
+        \item {\bf Q2}: What are the built-in operations provided by a set?
           %
-        \item {\bf Q3}: What is the difference between a tuple and a stream?
+        \item {\bf Q3}: How can you connect sets in math and programming?
           %
-        \item {\bf Q4}: How can you concatenate streams into a new stream?
+        \item {\bf Q4}: How does Boolean logic help us describe a set?
           %
-        \item {\bf Q5}: How do streams aid distributed programming in Python?
+        \item {\bf Q5}: How does the {\tt sympy} package support set programming?
           %
       \end{itemize}
       %
       \vspace*{-.2in}
       %
-    \item Dynamically generated streams support memory efficiency and
-      flexibility in Python programs. Also, the stream is a monoid under the
-      identify of the empty stream!
+    \item Refer to \url{https://realpython.com/python-sets/} for more details
+      about how to program in Python with sets!
       %
   \end{itemize}
   %
