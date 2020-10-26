@@ -117,9 +117,8 @@
 % Slide
 %
 \begin{frame}[fragile]
-  \frametitle{Creating a Set from a List}
+  \frametitle{Using Python to Create a Set from a List}
   \normalsize
-  % \hspace*{-.25in}
   \begin{minipage}{6in}
     \vspace*{.25in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
@@ -134,9 +133,63 @@ print(x)
   \begin{center}
     %
     \normalsize \noindent What is the output of this program? \\
-    \normalsize \noindent A character is a sequence of numbers \\
-    \normalsize \noindent Does the entire file exist in the computer's
-    memory? \\
+    \normalsize \noindent What are the properties of a set in Python? \\
+    \normalsize \noindent How do we define the order of the set's elements? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using Python to Create a Set from a Tuple}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+x = set(('pencil', 'paper', 'pen',
+         'pencil', 'wallet', 'pen'))
+
+print("Set defined with a tuple:")
+print(x)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent What is the output of this program? \\
+    \normalsize \noindent Does the use of a set or a tuple influence? \\
+    \normalsize \noindent What types of elements can we store in a set? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Output of a Program that Creates Sets}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
+
+Set defined with a list:
+{'paper', 'pencil', 'pen', 'wallet'}
+
+Set defined with a tuple:
+{'paper', 'pencil', 'pen', 'wallet'}
+
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent The sets do not store duplicate values \\
+    \normalsize \noindent Creation from either a set or a tuple is the same \\
+    \normalsize \noindent The contents of a set are displayed in lexicographic
+    order \\
     %
   \end{center}
   %
