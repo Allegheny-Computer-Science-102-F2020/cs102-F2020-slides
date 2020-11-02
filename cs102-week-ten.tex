@@ -362,6 +362,77 @@ print(subset)
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Output of a Program that Performs Subsets}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{text}
+Set one proper subset set two:
+  False
+
+Set two proper subset set one:
+  False
+
+Set one proper subset set three:
+  True
+
+Set three proper subset set one:
+  False
+    \end{minted}
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Union and Intersection with Finite Sets}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+one = FiniteSet(1, 2, 3)
+two = FiniteSet(1, 2, 3, 4)
+
+union = one.union(two)
+print(union)
+
+intersection = one.intersection(two)
+print(intersection)
+    \end{minted}
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Output of a Program that Performs Subsets}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
+Union:
+  FiniteSet(1, 2, 3, 4)
+
+Intersection:
+  FiniteSet(1, 2, 3)
+    \end{minted}
+  \end{minipage}
+  %
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent Would {\tt set} produce the same output? \\
+    \normalsize \noindent Any questions about operations with {\tt FiniteSet}? \\
+    \normalsize \noindent How can we use {\tt FiniteSet}s for probability? \\
+    %
+  \end{center}
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Using Sets in Python Programs}
   %
   \begin{itemize}
