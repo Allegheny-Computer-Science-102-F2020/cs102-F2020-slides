@@ -320,6 +320,48 @@ for element in finite_set:
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Checking Subset Relationships with Finite Sets}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+one = FiniteSet(1, 2, 3)
+two = FiniteSet(1, 2, 3)
+
+subset = one.is_proper_subset(two)
+print(subset)
+
+subset = two.is_proper_subset(one)
+print(subset)
+    \end{minted}
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Checking Subset Relationships with Finite Sets}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+one = FiniteSet(1, 2, 3)
+three = FiniteSet(1, 2, 3, 4)
+
+subset = one.is_proper_subset(three)
+print(subset)
+
+subset = three.is_proper_subset(one)
+print(subset)
+    \end{minted}
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Using Sets in Python Programs}
   %
   \begin{itemize}
