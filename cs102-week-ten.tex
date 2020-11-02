@@ -473,6 +473,35 @@ Intersection:
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Calculating a Probability with Sets in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+def probability(space, event):
+    return len(event) / len(space)
+
+six_sided = {*[1, 2, 3, 4, 5, 6]}
+three = {*[3]}
+
+roll_three = probability(six_sided,
+                         three)
+    \end{minted}
+  \end{minipage}
+  %
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent Would {\tt set} produce the same output? \\
+    \normalsize \noindent Any questions about operations with {\tt FiniteSet}? \\
+    \normalsize \noindent How can we use {\tt FiniteSet}s for probability? \\
+    %
+  \end{center}
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Using Finite Sets in Programs with Sympy}
   %
   \begin{itemize}
