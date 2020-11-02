@@ -50,16 +50,25 @@ have already cloned this repository to your laptop.
 - Run the program that uses the different set operations: `python set-operations.py`
 - Run the program that demonstrates the use of set comprehensions: `python set-comprehension.py`
 - Run the program that demonstrates the use of set comprehensions and Boolean logic: `python set-comprehension-logical.py`
+- Run the program that shows how to create a finite set using Sympy: `python finiteset-creation.py`
+- Run the program that shows how to perform operations on a finite set using Sympy: `python finiteset-operations.py`
+- Run the program that demonstrates that a finite set in Sympy removes repeated elements: `python finiteset-repeats.py`
+- Run the program that shows how to perform subsets with the finite set in Sympy: `python finiteset-subsets.py`
+- Run the program that shows to how calculate logical-and-probability with finite set in Sympy: `python probability-event-and.py`
+- Run the program that shows to how calculate logical-or-probability with finite set in Sympy: `python probability-event-or.py`
+- Run the program that demonstrates a basic probably calculation in Python: `python probability-example.py`
 
 Please note that these are what I would call "Python program segments" in that
 they do not leverage a framework, like Poetry, for building Python applications.
 While these programs will execute and produce output in your terminal window,
 they do not provide either a command-line or a web-based interface. Unless
 stated otherwise, these programs also do not assume that you have any additional
-Python packages installed on your laptop. Finally, these programs contain
-debugging output not listed on the slides, thereby better ensuring that you can
-understand how the program accepts input and produces output. Here is an example
-from running the command `python mean-compute.py` program:
+Python packages installed on your laptop. With that said, the programs that use
+the `FiniteSet` package assume that you have installed the `sympy` package by
+typing `pip install sympy`. Finally, these programs contain debugging output not
+listed on the slides, thereby better ensuring that you can understand how the
+program accepts input and produces output. Here is an example from running the
+command `python mean-compute.py` program:
 
 ```
 Called compute_mean with numbers = [5, 10, 5, 10, 5]
