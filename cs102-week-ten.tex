@@ -148,15 +148,19 @@ print(finite_set)
   \begin{minipage}{6in}
     \vspace*{.25in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+list = [2, 4, 6, 8, 10]
+finite_set = FiniteSet(*list)
+print(finite_set)
 
+tuple = (2, 4, 6, 8, 10)
+finite_set = FiniteSet(*tuple)
+print(finite_set)
     \end{minted}
   \end{minipage}
-  \vspace*{.25in}
+  \vspace*{.05in}
   \begin{center}
     %
-    \normalsize \noindent What is the output of this program? \\
-    \normalsize \noindent What are the properties of a set in Python? \\
-    \normalsize \noindent How do we define the order of the set's elements? \\
+    \normalsize \noindent What is the purpose of the {\tt *} in this program? \\
     %
   \end{center}
   %
@@ -169,14 +173,18 @@ print(finite_set)
   \normalsize
   \begin{minipage}{6in}
     \vspace*{.25in}
-    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{text}
+Explicit FiniteSet:
+  FiniteSet(2, 4, 6, 8, 10)
 
-Set defined with a list:
-{'paper', 'pencil', 'pen', 'wallet'}
+Empty FiniteSet:
+  EmptySet
 
-Set defined with a tuple:
-{'paper', 'pencil', 'pen', 'wallet'}
+FiniteSet from Tuple:
+  FiniteSet(2, 4, 6, 8, 10)
 
+FiniteSet Containing Tuple:
+  FiniteSet((2, 4, 6, 8, 10))
     \end{minted}
   \end{minipage}
   \vspace*{.25in}
@@ -222,7 +230,7 @@ Set defined with a tuple:
       %
       \vspace*{-.15in}
       %
-    \item Which of these sets are finite? Which of them are infinite?
+    \item Which of these sets are {\bf finite}? Which of them are {\bf infinite}?
       %
   \end{itemize}
   %
@@ -292,7 +300,7 @@ Set defined with a tuple:
       %
       \vspace*{-.15in}
       %
-    \item So, what are the benefits of using sets in Python programs?
+    \item So, what are the benefits of using {\tt FiniteSet} in Sympy?
       %
   \end{itemize}
   %
