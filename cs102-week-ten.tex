@@ -308,6 +308,36 @@ FiniteSet Containing Tuple:
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Set Repetition and Iteration with Finite Sets}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+from sympy import FiniteSet
+
+list = [1, 2, 3, 2]
+finite_set = FiniteSet(*list)
+print(finite_set)
+
+for element in finite_set:
+    print(element)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent The sets do not store duplicate values \\
+    \normalsize \noindent Creation from either a set or a tuple is the same \\
+    \normalsize \noindent The contents of a set are displayed in lexicographic
+    order \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Using Sets in Python Programs}
   %
   \begin{itemize}
