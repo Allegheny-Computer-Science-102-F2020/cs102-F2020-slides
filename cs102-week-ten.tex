@@ -1,0 +1,672 @@
+\documentclass[14pt,aspectratio=169]{beamer}
+
+\usepackage{pgfpages}
+\usepackage{fancyvrb}
+\usepackage{pgfplots}
+
+\usepackage{minted}
+\usemintedstyle{tango}
+
+\usepackage{amsfonts}
+
+\usepackage{moresize}
+\usepackage{anyfontsize}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{arrows.meta}
+
+\tikzstyle{process}=[rectangle, draw, thick, text width=5em, text centered, minimum height=2.5em, fill=gray!40]
+\tikzstyle{entity}=[rounded rectangle, draw, thick, text width=5em, text centered, minimum height=1.5em, fill=gray!40]
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\setbeamercolor{background canvas}{bg=lightgray}
+
+% define some colors for a consistent theme across slides
+
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+
+\title{Discrete Structures: \\ Programming with \\ Finite Sets in Sympy}
+
+\author{{\bf Gregory M. Kapfhammer}}
+
+\institute[shortinst]{{\bf Department of Computer Science, Allegheny College}}
+
+\begin{document}
+
+{
+  \setbeamercolor{page number in head/foot}{fg=background canvas.bg}
+  \begin{frame}
+    \titlepage
+  \end{frame}
+}
+
+%% Slide
+%
+\begin{frame}{Technical Question}
+  %
+  \hspace*{.5in}
+  %
+  \begin{minipage}{4.3in}
+    %
+    \vspace*{.1in}
+    %
+    \begin{center}
+      %
+      {\large How do I use the implementation of a finite set in Sympy to
+      create Python programs that calculate probabilities?}
+      %
+    \end{center}
+    %
+  \end{minipage}
+  %
+  \vspace{2ex}
+  %
+  \begin{center}
+    %
+    \small Let's explore how to use finite sets in Sympy to implement programs
+    that calculate the probability of an event! Let's better understand
+    how discrete structures help us to characterize random events!
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Using Mathematical Sets in Python Programs}
+  %
+  \begin{itemize}
+    %
+    \item Set theory is important to many areas of mathematics
+      %
+      \vspace*{-.15in}
+      %
+    \item The {\tt Sympy} package gives an implementation of finite sets
+      %
+      \begin{itemize}
+        %
+        \item Remember, sets are ``containers'' for other elements
+        %
+        \item The sets in Sympy are finite sets, called {\tt FiniteSet}
+        %
+        \item These sets have the same properties as built-in sets
+        %
+        \item {\tt FiniteSet} has a few features not provided by {\tt set}
+        %
+        \item Sets can container other objects like sets and tuples
+        %
+        \item A subset of a set contains a portion of the set
+        %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item How do these properties of sets make it easier to implement Python
+      programs? How are they different than lists or tuples or generator
+      expressions?
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using Python to Create a Set from a List}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+x = set(['pencil', 'paper', 'pen',
+         'pencil', 'wallet', 'pen'])
+
+print("Set defined with a list:")
+print(x)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent What is the output of this program? \\
+    \normalsize \noindent What are the properties of a set in Python? \\
+    \normalsize \noindent How do we define the order of the set's elements? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using Python to Create a Set from a Tuple}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+x = set(('pencil', 'paper', 'pen',
+         'pencil', 'wallet', 'pen'))
+
+print("Set defined with a tuple:")
+print(x)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent What is the output of this program? \\
+    \normalsize \noindent Does the use of a set or a tuple influence? \\
+    \normalsize \noindent What types of elements can we store in a set? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Output of a Program that Creates Sets}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
+
+Set defined with a list:
+{'paper', 'pencil', 'pen', 'wallet'}
+
+Set defined with a tuple:
+{'paper', 'pencil', 'pen', 'wallet'}
+
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent The sets do not store duplicate values \\
+    \normalsize \noindent Creation from either a set or a tuple is the same \\
+    \normalsize \noindent The contents of a set are displayed in lexicographic
+    order \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Python's Sets Store Immutable Elements}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+
+x = {53, 'pencil',
+     (1, 1, 2, 3, 5), 3.14159}
+
+print("Set with multiple types:")
+print(x)
+
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Note the different style for creation \\
+    \normalsize \noindent The data types in this set are different \\
+    \normalsize \noindent All of the variables in this set are immutable \\
+    \normalsize \noindent How will this program display the elements of the set? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Python's Sets Cannot Store Mutable Data}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+list = [53, 'pencil',
+        (1, 1, 2, 3, 5), 3.14159]
+x = {list}
+    \end{minted}
+    %
+    \vspace*{.15in}
+    %
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
+Traceback (most recent call last):
+  File "set-element-types.py", line 11,
+       in <module>
+    x = {list}
+TypeError: unhashable type: 'list'
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Note the different style for creation \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Creating Sets with Mathematical Notation}
+  %
+  \begin{itemize}
+    %
+    \item Explicit definition of a set: $S = \{1, 2, 3\}$
+      %
+      \vspace*{-.15in}
+      %
+    \item Definition of a set with a property:\\ $\{ n \; | \; 0 < n < 100
+      \;\mbox{and}\; n \;\mbox{is odd} \}$
+      %
+      \vspace*{-.15in}
+      %
+    \item $\mathbb{N}$ is the set of natural numbers
+      %
+      \vspace*{-.15in}
+      %
+    \item $\mathbb{Z}$ is the set of integer numbers
+      %
+      \vspace*{-.15in}
+      %
+    \item $\mathbb{R}$ is the set of real numbers
+      %
+      \vspace*{-.15in}
+      %
+    \item $\mathbb{C}$ is the set of complex numbers
+      %
+      \vspace*{-.15in}
+      %
+    \item You can also define sets by using different set operators!
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Mathematical Operations with Sets}
+  %
+  \begin{itemize}
+    %
+    \item Set membership: $S = \{1, 2, 3\}$ such that $1 \in S$ and $5 \notin S$
+      %
+      \vspace*{-.15in}
+      %
+    \item Proper subset: $S = \{1, 2, 3\}$ and thus $\{1\} \subset S$
+      %
+      \vspace*{-.15in}
+      %
+    \item Subset: $S = \{1, 2, 3\}$ and thus $\{1\} \subseteq S$ and $\{1, 2, 3\} \subseteq S$
+      %
+      \vspace*{-.15in}
+      %
+    \item Set union: $S_1 \cup S_2$ contains elements in either $S_1$ and $S_2$
+      %
+      \vspace*{-.15in}
+      %
+    \item Set intersection: $S_1 \cap S_2$ is the elements in both $S_1$ and $S_2$
+      %
+      \vspace*{-.15in}
+      %
+    \item Set difference: $S_1 - S_2$ is the elements in $S_1$ but not in $S_2$
+      %
+      \vspace*{-.15in}
+      %
+    \item Union and intersection are associative and commutative!
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Differences Between Math and Programming}
+  %
+  \begin{itemize}
+    %
+    \item Programmers cannot use sets like mathematicians do!
+      %
+      \vspace*{-.15in}
+      %
+    \item Python programs cannot store an infinite set
+      %
+      \vspace*{-.15in}
+      %
+    \item Finite sets must fit into a computer's finite memory
+      %
+      \vspace*{-.15in}
+      %
+    \item Programs need a procedure for constructing the set
+      %
+      \vspace*{-.15in}
+      %
+    \item Different programming languages and packages have other restrictions.
+      For instance, recall that Python programs cannot create sets that contain
+      mutable elements like lists!
+      %
+      \vspace*{-.15in}
+      %
+    \item So, what are the benefits of using sets in Python programs?
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using the Set Union Operator in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+a = {1, 2, 3, 4}
+b = {2, 3, 4, 5}
+c = {3, 4, 5, 6}
+d = {4, 5, 6, 7}
+
+print(a.union(b, c, d))
+print(a | b | c | d)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Sets in Python provide useful operations like {\tt union}! \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using the Set Intersection Operator in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+a = {1, 2, 3, 4}
+b = {2, 3, 4, 5}
+c = {3, 4, 5, 6}
+d = {4, 5, 6, 7}
+
+print(a.intersection(b, c, d))
+print(a & b & c & d)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Sets in Python provide useful operations like {\tt
+    intersection}! \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using the Set Difference Operator in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+a = {1, 2, 3, 4}
+b = {2, 3, 4, 5}
+c = {3, 4, 5, 6}
+d = {4, 5, 6, 7}
+
+print(a.difference(b, c))
+print(a - b - c)
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Sets in Python provide useful operations like {\tt
+    difference}! \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Output of the Set Operators in Python}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{text}
+Union of the sets:
+{1, 2, 3, 4, 5, 6, 7}
+{1, 2, 3, 4, 5, 6, 7}
+
+Intersection of the sets:
+{4}
+{4}
+
+Difference of the sets:
+{1}
+{1}
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Sets in Python provide useful operations like {\tt
+    difference}! \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Set Comprehensions in Python: Odd Positives}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+odd_positives = {n for n in range(100)
+                 if n % 2 == 1}
+
+for odd_positive in odd_positives:
+    print(odd_positive)
+
+print(list(odd_positives))
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Modular arithmetic helps us determine when a number is
+    odd\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Set Comprehensions in Python: Even Positives}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+even_positives = {n for n in range(100)
+                  if n % 2 == 0}
+
+for even_positive in even_positives:
+    print(even_positive)
+
+print(list(even_positives))
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Modular arithmetic helps us determine when a number is
+    even\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Boolean Logic and Sets: Using ``Logical Or''}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+odd_positives_two =
+        {n for n in range(20)
+         if n % 2 == 1 or n == 2}
+
+for value in odd_positives_two:
+    print(value)
+
+print(list(odd_positives_two))
+    \end{minted}
+    %
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Output of the Program Using ``Logical Or''}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.15in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
+1
+2
+3
+[...]
+19
+
+[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+    \end{minted}
+    %
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Either of the conditions must be true for logical
+    {\tt or} operator!\\
+    %
+  \end{center}
+  %
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Boolean Logic and Sets: Using ``Logical And''}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+even_positives_by_four =
+     {n for n in range(20)
+      if n % 2 == 0 and n % 4 == 0}
+
+for value in even_positives_by_four:
+    print(value)
+
+print(list(even_positives_by_four))
+    \end{minted}
+    %
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Output of the Program Using ``Logical And''}
+  \normalsize
+  \begin{minipage}{6in}
+    \vspace*{.15in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{text}
+0
+4
+8
+12
+16
+
+[0, 4, 8, 12, 16]
+    \end{minted}
+    %
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent Both of the conditions must be true for logical
+    {\tt and} operator!\\
+    %
+  \end{center}
+  %
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Using Sets in Python Programs}
+  %
+  \begin{itemize}
+    %
+    \item Sets are a discrete structure with many practical benefits!
+      %
+      \vspace*{-.2in}
+      %
+    \item Sets have built-in operations that make programming easy
+      %
+      \vspace*{-.2in}
+      %
+    \item Using sets and Boolean logic in Python programs:
+      %
+      \begin{itemize}
+        %
+        \item {\bf Q1}: What are the characteristics of a set?
+          %
+        \item {\bf Q2}: What are the built-in operations provided by a set?
+          %
+        \item {\bf Q3}: How can you connect sets in math and programming?
+          %
+        \item {\bf Q4}: How does Boolean logic help us describe a set?
+          %
+        \item {\bf Q5}: How does the {\tt sympy} package support set programming?
+          %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item Refer to \url{https://realpython.com/python-sets/} for more details
+      about how to program in Python with sets!
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+\end{document}
