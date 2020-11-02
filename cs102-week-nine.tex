@@ -188,8 +188,7 @@ Set defined with a tuple:
     %
     \normalsize \noindent The sets do not store duplicate values \\
     \normalsize \noindent Creation from either a set or a tuple is the same \\
-    \normalsize \noindent The contents of a set are displayed in lexicographic
-    order \\
+    \normalsize \noindent The contents of a set are displayed in arbitrary order \\
     %
   \end{center}
   %
@@ -227,7 +226,7 @@ print(x)
 % Slide
 %
 \begin{frame}[fragile]
-  \frametitle{Python's Sets Cannot Store Mutable Data}
+  \frametitle{Python's Sets Cannot Store Mutable Containers}
   \normalsize
   \begin{minipage}{6in}
     \vspace*{.25in}
@@ -287,7 +286,7 @@ TypeError: unhashable type: 'list'
       %
       \vspace*{-.15in}
       %
-    \item You can also define sets by using different set operators!
+    \item You can also define sets by using different set {\bf operators}!
       %
   \end{itemize}
   %
@@ -311,7 +310,7 @@ TypeError: unhashable type: 'list'
       %
       \vspace*{-.15in}
       %
-    \item Set union: $S_1 \cup S_2$ contains elements in either $S_1$ and $S_2$
+    \item Set union: $S_1 \cup S_2$ contains elements in either $S_1$ or $S_2$
       %
       \vspace*{-.15in}
       %
@@ -323,7 +322,7 @@ TypeError: unhashable type: 'list'
       %
       \vspace*{-.15in}
       %
-    \item Union and intersection are associative and commutative!
+    \item Union and intersection are {\bf associative} and {\bf commutative}!
       %
   \end{itemize}
   %
