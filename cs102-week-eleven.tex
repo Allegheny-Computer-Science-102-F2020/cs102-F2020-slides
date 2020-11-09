@@ -297,7 +297,7 @@ mlb_team = dict([
   \begin{minipage}{6in}
     \vspace*{.25in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
-MLB_team = dict(
+mlb_team = dict(
     Colorado='Rockies',
     Boston='Red Sox',
     Minnesota='Twins',
@@ -323,13 +323,13 @@ MLB_team = dict(
   \begin{minipage}{6in}
     \vspace*{.25in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
-print(type(MLB_team))
-print(MLB_team)
+print(type(mlb_team))
+print(mlb_team)
 
-print(MLB_team['Minnesota'])
-print(MLB_team['Colorado'])
+print(mlb_team['Minnesota'])
+print(mlb_team['Colorado'])
 
-MLB_team['Kansas City'] = 'Royals'
+mlb_team['Kansas City'] = 'Royals'
     \end{minted}
   \end{minipage}
   \vspace*{.025in}
@@ -376,11 +376,11 @@ MLB_team['Kansas City'] = 'Royals'
     \vspace*{.25in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
 
-print(MLB_team['Toronto'])
+print(mlb_team['Toronto'])
 
 Traceback (most recent call last):
   File "dictionary-example.py", line 32, in <module>
-    print(MLB_team['Toronto'])
+    print(mlb_team['Toronto'])
 KeyError: 'Toronto'
 
     \end{minted}
@@ -389,6 +389,61 @@ KeyError: 'Toronto'
   \begin{center}
     %
     \normalsize \noindent Why did this program crash? What does the error mean?\\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using a Tuple as a Dictionary Key}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+
+d = {(1, 1): 'a', (1, 2): 'b',
+     (2, 1): 'c', (2, 2): 'd'}
+
+print(d[(1,1)])
+
+print(d[(2,1)])
+
+    \end{minted}
+  \end{minipage}
+  \vspace*{.025in}
+  \begin{center}
+    %
+    \normalsize \noindent Since tuples are immutable, a dictionary can use it as
+    a key! \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using a List as a Dictionary Key}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+
+d = {[1, 1]: 'a', [1, 2]: 'b',
+     [2, 1]: 'c', [2, 2]: 'd'}
+
+Traceback (most recent call last):
+  File "dictionary-differences.py", line 7, in <module>
+    d = {[1, 1]: 'a', [1, 2]: 'b',
+TypeError: unhashable type: 'list'
+
+    \end{minted}
+  \end{minipage}
+  \vspace*{.025in}
+  \begin{center}
+    %
+    \normalsize \noindent Since tuples are immutable, a dictionary can use it as
+    a key\\
     %
   \end{center}
   %
@@ -440,30 +495,30 @@ KeyError: 'Toronto'
   %
   \begin{itemize}
     %
-    \item Sets are a discrete structure with many practical benefits!
+    \item Dictionaries are super discrete structures with benefits!
       %
       \vspace*{-.2in}
       %
-    \item Programming with sets lets you calculate probabilities
+    \item Combine dictionaries and functions or use separately
       %
       \vspace*{-.2in}
       %
-    \item Using finite sets and probability in Python programs:
+    \item Using dictionaries and functions in Python programs:
       %
       \begin{itemize}
         %
-        \item {\bf Q1}: What are the characteristics of an infinite set? Finite set?
+        \item {\bf Q1}: What are the characteristics of functions in Python?
           %
-        \item {\bf Q2}: What are the built-in operations provided by a finite set?
+        \item {\bf Q2}: What are the characteristics of dictionaries in Python?
           %
         \item {\bf Q3}: How does the {\tt sympy} package support set
           programming?
           %
-        \item {\bf Q4}: How does the use of sets support probability
-          calculations?
+        \item {\bf Q4}: What functions can process a multiset discrete
+          structure?
           %
-        \item {\bf Q5}: How can Venn diagrams help to visualize set
-          relationships?
+        \item {\bf Q5}: How to combine functions and dictionaries for
+          efficiency?
           %
       \end{itemize}
       %
