@@ -71,7 +71,8 @@
     \small Let's learn how to pick the best discrete structure and function when
     we are implementing a function to calculate a mathematical calculation!
     Please review the content from previous weeks so that you can keep this
-    week's content in an appropriate context.
+    week's content in an appropriate context. Also, try out all of the Python
+    code!
     %
   \end{center}
   %
@@ -314,6 +315,84 @@ MLB_team = dict(
   %
 \end{frame}
 
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using Dictionaries in Python}
+  \hspace*{.1in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+print(type(MLB_team))
+print(MLB_team)
+
+print(MLB_team['Minnesota'])
+print(MLB_team['Colorado'])
+
+MLB_team['Kansas City'] = 'Royals'
+    \end{minted}
+  \end{minipage}
+  \vspace*{.025in}
+  \begin{center}
+    %
+    \normalsize \noindent What is the output of this program segment? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Output Excerpt from Using a Dictionary}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{text}
+<class 'dict'>
+{'Colorado': 'Rockies', 'Boston': 'Red Sox',
+ 'Minnesota': 'Twins', 'Milwaukee': 'Brewers',
+ 'Seattle': 'Mariners'}
+
+<class 'dict'>
+{'Colorado': 'Rockies', 'Boston': 'Red Sox',
+ 'Minnesota': 'Twins', 'Milwaukee': 'Brewers',
+ 'Seattle': 'Mariners', 'Kansas City': 'Royals'}
+    \end{minted}
+  \end{minipage}
+  \vspace*{.025in}
+  \begin{center}
+    %
+    \normalsize \noindent What happens if you access data that does not exist? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Asking a Dictionary for a Non-Existent Key}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+
+print(MLB_team['Toronto'])
+
+Traceback (most recent call last):
+  File "dictionary-example.py", line 32, in <module>
+    print(MLB_team['Toronto'])
+KeyError: 'Toronto'
+
+    \end{minted}
+  \end{minipage}
+  \vspace*{.025in}
+  \begin{center}
+    %
+    \normalsize \noindent Why did this program crash? What does the error mean?\\
+    %
+  \end{center}
+  %
+\end{frame}
 
 % Slide
 %
@@ -350,8 +429,8 @@ MLB_team = dict(
       %
       \vspace*{-.2in}
       %
-    \item See \url{https://doingmathwithpython.github.io/} for more about how to
-      program with {\tt FiniteSet}!
+    \item See \url{https://realpython.com/python-dicts/} for more on how to
+      create and use dictionaries in Python!
       %
   \end{itemize}
   %
