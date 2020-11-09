@@ -177,7 +177,7 @@ def fibonacci(number: int) -> Tuple[int]:
   \frametitle{Inputs and Outputs with The Factorial Function}
   \hspace*{-.2in}
   \begin{minipage}{6in}
-    \vspace*{.25in}
+    \vspace*{.2in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
 def factorial(number):
     factorial_value = 1
@@ -193,6 +193,95 @@ def factorial(number):
     \normalsize \noindent How would you write the function's type signature? \\
     \normalsize \noindent What are the inputs and outputs of this function? \\
     \normalsize \noindent Are there other ways to implement this function? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Using Python's Dictionaries to Create Mappings}
+  %
+  \begin{itemize}
+    %
+    \item Static sequences like a tuple or a list create a mapping!
+      %
+      \vspace*{-.15in}
+      %
+    \item Python's dictionary is a discrete structure with a mapping:
+      %
+      \begin{itemize}
+        %
+        \item Create a mapping between keys and values
+        %
+        \item Store key-value pairs inside of the structure
+        %
+        \item You ``lookup'' the key to ``find'' the value
+        %
+        \item Dictionary keys must be an immutable object
+        %
+        \item The value of the key can be of any data type
+        %
+        \item Integers and strings are common types for the key
+        %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item It is possible to implement a function in many different ways! How do
+      we decide which approach is the best?
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using Dictionaries to Create a Mapping: Way \#1}
+  \hspace*{.1in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+mlb_team = {
+    'Colorado' : 'Rockies',
+    'Boston'   : 'Red Sox',
+    'Minnesota': 'Twins',
+    'Milwaukee': 'Brewers',
+    'Seattle'  : 'Mariners'
+}
+    \end{minted}
+  \end{minipage}
+  \vspace*{.025in}
+  \begin{center}
+    %
+    \normalsize \noindent Reference: \url{https://realpython.com/python-dicts/} \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using Dictionaries to Create a Mapping: Way \#2}
+  \hspace*{.1in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+mlb_team = dict([
+    ('Colorado', 'Rockies'),
+    ('Boston', 'Red Sox'),
+    ('Minnesota', 'Twins'),
+    ('Milwaukee', 'Brewers'),
+    ('Seattle', 'Mariners')
+])
+    \end{minted}
+  \end{minipage}
+  \vspace*{.025in}
+  \begin{center}
+    %
+    \normalsize \noindent Here is an alternative way to create key-value pairs! \\
     %
   \end{center}
   %
