@@ -57,6 +57,8 @@ have already cloned this repository to your laptop.
 - Run the program that shows to how calculate logical-and-probability with finite set in Sympy: `python probability-event-and.py`
 - Run the program that shows to how calculate logical-or-probability with finite set in Sympy: `python probability-event-or.py`
 - Run the program that demonstrates a basic probably calculation in Python: `python probability-example.py`
+- Run the program that shows how to create a dictionary discrete structure: `python dictionary-example.py`
+- Run the program that shows some differences in the dictionary discrete structure: `python dictionary-differences.py`
 
 Please note that these are what I would call "Python program segments" in that
 they do not leverage a framework, like Poetry, for building Python applications.
