@@ -1,0 +1,189 @@
+\documentclass[14pt,aspectratio=169]{beamer}
+
+\usepackage{pgfpages}
+\usepackage{fancyvrb}
+\usepackage{pgfplots}
+
+\usepackage{minted}
+\usemintedstyle{tango}
+
+\usepackage{amsfonts}
+
+\usepackage{moresize}
+\usepackage{anyfontsize}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{arrows.meta}
+
+\tikzstyle{process}=[rectangle, draw, thick, text width=5em, text centered, minimum height=2.5em, fill=gray!40]
+\tikzstyle{entity}=[rounded rectangle, draw, thick, text width=5em, text centered, minimum height=1.5em, fill=gray!40]
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\setbeamercolor{background canvas}{bg=lightgray}
+
+% define some colors for a consistent theme across slides
+
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+
+\title{Discrete Structures: \\ Programming with \\ Functions in Python}
+
+\author{{\bf Gregory M. Kapfhammer}}
+
+\institute[shortinst]{{\bf Department of Computer Science, Allegheny College}}
+
+\begin{document}
+
+{
+  \setbeamercolor{page number in head/foot}{fg=background canvas.bg}
+  \begin{frame}
+    \titlepage
+  \end{frame}
+}
+
+%% Slide
+%
+\begin{frame}{Technical Question}
+  %
+  \hspace*{.5in}
+  %
+  \begin{minipage}{4.3in}
+    %
+    \vspace*{.1in}
+    %
+    \begin{center}
+      %
+      {\large How do I use dictionaries, sets, and lists to efficiently
+      implement mathematical functions in Python?}
+      %
+    \end{center}
+    %
+  \end{minipage}
+  %
+  \vspace{2ex}
+  %
+  \begin{center}
+    %
+    \small Let's learn how to pick the best discrete structure and function when
+    we are implementing a function to calculate a mathematical calculation!
+    Please review the content from previous weeks so that you can keep this
+    week's content in an appropriate context.
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{The Concept of a Mathematical Mapping}
+  %
+  \begin{itemize}
+    %
+    \item As first introduced in Chapter 1, a mapping is a set of ordered pairs
+      in which no two have the same first element
+      %
+      \vspace*{-.15in}
+      %
+    \item Implementing functions in the Python language:
+      %
+      \begin{itemize}
+        %
+        \item Functions can accept zero or more inputs
+        %
+        \item Functions can produce zero or more outputs
+        %
+        \item Higher-order functions can accept and produce functions
+        %
+        \item One function's input can become another function's output
+        %
+        \item Imperative or declarative specification of functions
+        %
+        \item Discrete structures normally have a function interface
+        %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item It is possible to implement a function in many different ways! How do
+      we decide which approach is the best?
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Inputs and Outputs with The Collatz Function}
+  \hspace*{-.2in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+def Collatz(number: int) -> Iterator[int]:
+    yield number
+    while number != 1:
+        if number % 2 == 0:
+            number = number // 2
+        else:
+            number = 3 * number + 1
+        yield number
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent What is the output of this program? \\
+    \normalsize \noindent Are there other ways to create a {\tt FiniteSet}? \\
+    \normalsize \noindent What operations can we perform with a {\tt FiniteSet}? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Creating Mathematical Mappings in Python}
+  %
+  \begin{itemize}
+    %
+    \item Sets are a discrete structure with many practical benefits!
+      %
+      \vspace*{-.2in}
+      %
+    \item Programming with sets lets you calculate probabilities
+      %
+      \vspace*{-.2in}
+      %
+    \item Using finite sets and probability in Python programs:
+      %
+      \begin{itemize}
+        %
+        \item {\bf Q1}: What are the characteristics of an infinite set? Finite set?
+          %
+        \item {\bf Q2}: What are the built-in operations provided by a finite set?
+          %
+        \item {\bf Q3}: How does the {\tt sympy} package support set
+          programming?
+          %
+        \item {\bf Q4}: How does the use of sets support probability
+          calculations?
+          %
+        \item {\bf Q5}: How can Venn diagrams help to visualize set
+          relationships?
+          %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item See \url{https://doingmathwithpython.github.io/} for more about how to
+      program with {\tt FiniteSet}!
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+\end{document}
