@@ -396,6 +396,46 @@ KeyError: 'Toronto'
 
 % Slide
 %
+\begin{frame}{Should You Pick a Dictionary or a Function?}
+  %
+  \begin{itemize}
+    %
+    \item Wait, are dictionaries and functions the same? Well ...
+      %
+      \vspace*{-.15in}
+      %
+    \item Picking between a discrete structure and a computation:
+      %
+      \begin{itemize}
+        %
+        \item A discrete structure must be finite and fit into memory
+        %
+        \item A function might be the only viable solution for many keys
+        %
+        \item A discrete structure can often be mutable, giving flexibility
+        %
+        \item It is harder to make a function mutable, in most languages
+        %
+        \item The lookup of a value for a key is done efficiently in a
+          dictionary
+        %
+        \item A function that computes the value for a key may take time
+        %
+        \item But, what is going to be easier to program and test?
+        %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item The honest answer is ``it depends''! Use judgement and benchmarks!
+      Defend your decision with evidence!
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Creating Mathematical Mappings in Python}
   %
   \begin{itemize}
