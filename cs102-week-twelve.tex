@@ -220,9 +220,8 @@ print(f"The breed of the dog is: {faith[2]}")
 %
 \begin{frame}[fragile]
   \frametitle{Output from Using a List to Represent Objects}
-  % \hspace*{-.15in}
   \begin{minipage}{6in}
-    \vspace*{.1in}
+    \vspace*{.15in}
     \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{text}
 The name of the dog is: Bosco
 The age of the dog is: 6
@@ -238,6 +237,65 @@ The breed of the dog is: Havanese
     %
     \normalsize \noindent How can this approach lead to defects? \\
     \normalsize \noindent Will this approach ensure object uniformity? \\
+    \normalsize \noindent Are there other approaches to creating objects? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using a Dictionary to Represent Objects}
+  \begin{minipage}{6in}
+    \vspace*{.2in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{python}
+bosco = {}
+
+bosco["Name"] = "Bosco"
+bosco["Age"] = 6
+bosco["Breed"] = "Havanese"
+
+faith = {}
+
+faith["Name"] = "Faith"
+faith["Age"] = 14
+faith["Breed"] = "Havanese"
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent What is the output of this program? \\
+    \normalsize \noindent Are there other ways to create a {\tt Tuple[Tuple[int, int], List[Tuple[int, int]]]}? \\
+    \normalsize \noindent What operations can we perform with a {\tt FiniteSet}? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Accessing a Dictionary Representing an Object}
+  \hspace*{-.1in}
+  \begin{minipage}{6in}
+    \vspace*{.2in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{python}
+print(f"The dog's name is: {bosco['Name']}")
+print(f"The dog's age is: {bosco['Age']}")
+print(f"The dog's breed is: {bosco['Breed']}")
+
+print(f"The dog's name is: {faith['Name']}")
+print(f"The dog's age is: {faith['Age']}")
+print(f"The dog's breed is: {faith['Breed']}")
+    \end{minted}
+  \end{minipage}
+  \vspace*{.1in}
+  \begin{center}
+    %
+    \normalsize \noindent What is the output of this program? \\
+    \normalsize \noindent Benefits compared to the list-based approach? \\
     \normalsize \noindent Are there other approaches to creating objects? \\
     %
   \end{center}
