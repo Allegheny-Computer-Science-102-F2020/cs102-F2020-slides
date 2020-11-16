@@ -13,7 +13,7 @@ print(f"The breed of the dog is: {bosco[2]}")
 
 print()
 
-# display the characteristics of the dog named faith
+# display the characteristics of the dog named Faith
 
 print(f"The name of the dog is: {faith[0]}")
 print(f"The age of the dog is: {faith[1]}")
