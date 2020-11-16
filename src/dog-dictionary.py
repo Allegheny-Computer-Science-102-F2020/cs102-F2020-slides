@@ -16,16 +16,16 @@ print()
 
 # display the characteristics of the dog named Bosco
 
-print(f"The name of the dog is: {bosco['Name']}")
-print(f"The age of the dog is: {bosco['Age']}")
-print(f"The breed of the dog is: {bosco['Breed']}")
+print(f"The dog's name is: {bosco['Name']}")
+print(f"The dog's age is: {bosco['Age']}")
+print(f"The dog's breed is: {bosco['Breed']}")
 
 print()
 
 # display the characteristics of the dog named Faith
 
-print(f"The name of the dog is: {faith['Name']}")
-print(f"The age of the dog is: {faith['Age']}")
-print(f"The breed of the dog is: {faith['Breed']}")
+print(f"The dog's name is: {faith['Name']}")
+print(f"The dog's age is: {faith['Age']}")
+print(f"The dog's breed is: {faith['Breed']}")
 
 print()
