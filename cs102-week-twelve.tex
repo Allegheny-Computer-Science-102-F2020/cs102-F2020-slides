@@ -460,6 +460,30 @@ The dog's breed is: Havanese
   %
 \end{frame}
 
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Defining Methods for a Python Objects}
+  \hspace*{-.15in}
+  \begin{minipage}{6in}
+    \vspace*{.2in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{python}
+# define a class to represent a Dog entity
+class Dog:
+
+    # define a description method for the dog
+    def description(self):
+        return f"{self.name} is a {self.age}
+                 years old {self.breed}"
+
+    # define an action method for the dog
+    def action(self, action):
+        return f"Hey, {self.name} {action}!"
+    \end{minted}
+  %
+  \end{minipage}
+  %
+\end{frame}
 
 % Slide
 %
