@@ -331,6 +331,34 @@ The dog's breed is: Havanese
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Representing an Object with a Class Definition}
+  \hspace*{-.1in}
+  \begin{minipage}{6in}
+    \vspace*{.2in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+class Dog:
+  # constructor for the Dog class
+  def __init__(self, name, age, breed):
+      self.name = name
+      self.age = age
+      self.breed = breed
+
+    \end{minted}
+  \end{minipage}
+  \vspace*{.1in}
+  \begin{center}
+    %
+    \normalsize \noindent What are the components of the {\tt Dog} class? \\
+    \normalsize \noindent How do you create an instance of the {\tt Dog} class? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+
+% Slide
+%
 \begin{frame}{Creating Mathematical Mappings in Python}
   %
   \begin{itemize}
