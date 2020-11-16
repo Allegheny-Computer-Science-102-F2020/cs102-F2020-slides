@@ -539,6 +539,29 @@ Hey, Faith waive bye-bye!
 
 % Slide
 %
+\begin{frame}[fragile]
+  \frametitle{Defining Default Methods for a Python Objects}
+  \begin{minipage}{6in}
+    \vspace*{.1in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+class Dog:
+
+  def __str__(self):
+      return f"{self.name} is a
+               {self.age} years old
+               {self.breed}"
+
+bosco = Dog("Bosco", 6, "Havanese")
+print(bosco)
+
+    \end{minted}
+  %
+  \end{minipage}
+  %
+\end{frame}
+
+% Slide
+%
 \begin{frame}{Creating Relationships and Objects in Python}
   %
   \begin{itemize}
