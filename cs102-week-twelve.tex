@@ -181,9 +181,38 @@ def factorial_iterative(number):
       %
       \vspace*{-.15in}
       %
-    \item Also, what is the meaning of {\tt factorial\_list.append}?
+    \item What is the best way to represent relationships in Python?
       %
   \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Using a List to Represent Objects in Python}
+  \hspace*{-.15in}
+  \begin{minipage}{6in}
+    \vspace*{.1in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{python}
+bosco = ["Bosco", 6, "Havanese"]
+faith = ["Faith", 14, "Havanese"]
+
+print(f"The name of the dog is: {bosco[0]}")
+print(f"The age of the dog is: {bosco[1]}")
+print(f"The breed of the dog is: {bosco[2]}")
+
+print(f"The name of the dog is: {faith[0]}")
+print(f"The age of the dog is: {faith[1]}")
+print(f"The breed of the dog is: {faith[2]}")
+    \end{minted}
+  \end{minipage}
+  \vspace*{.05in}
+  \begin{center}
+    %
+    \normalsize \noindent What are the drawbacks of this approach? \\
+    %
+  \end{center}
   %
 \end{frame}
 
