@@ -59,6 +59,9 @@ have already cloned this repository to your laptop.
 - Run the program that demonstrates a basic probably calculation in Python: `python probability-example.py`
 - Run the program that shows how to create a dictionary discrete structure: `python dictionary-example.py`
 - Run the program that shows some differences in the dictionary discrete structure: `python dictionary-differences.py`
+- Run the program that shows how to represent an object in Python using a list: `python dog-list.py`
+- Run the program that shows how to represent an object in Python using a dictionary: `python dog-dictionary.py`
+- Run the program that shows how to represent an object in Python using object-oriented programming : `python dog-object.py`
 
 Please note that these are what I would call "Python program segments" in that
 they do not leverage a framework, like Poetry, for building Python applications.
