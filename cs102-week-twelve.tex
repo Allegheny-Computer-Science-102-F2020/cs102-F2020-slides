@@ -80,37 +80,40 @@
 
 % Slide
 %
-\begin{frame}{The Concept of a Mathematical Mapping}
+\begin{frame}{The Mathematical Concept of a Relation}
   %
   \begin{itemize}
     %
-    \item As first introduced in Chapter 1, a mapping is a set of ordered pairs
-      in which no two have the same first element
+    \item As first introduced in Chapter 1, a relation is a connection between
+      two or more entities (e.g., sets or ordered pairs)
       %
       \vspace*{-.15in}
       %
-    \item Implementing functions in the Python language:
+    \item Understanding relations in discrete mathematics:
       %
       \begin{itemize}
         %
-        \item Functions can accept zero or more inputs
+        \item {\bf Binary relation}: set of ordered pairs
         %
-        \item Functions can produce zero or more outputs
+        \item {\bf Ternary relation}: set of ordered triples
         %
-        \item Higher-order functions can accept and produce functions
+        \item {\bf Quaternary relation}: set of ordered quadruples
         %
-        \item One function's input can become another function's output
-        %
-        \item Imperative or declarative specification of functions
-        %
-        \item Discrete structures normally have a ``function interface''
+        \item {\bf n-ary relation}: set of ordered n-tuples
         %
       \end{itemize}
       %
       \vspace*{-.2in}
       %
-    \item It is possible to implement a function in many different ways! How do
-      we decide which approach is the best?
+    \item First, think about the number of related elements
+      %
+      \vspace*{-.2in}
+      %
+    \item Consider the relationship between the elements as well
+      %
+      \vspace*{-.2in}
+      %
+    \item How do I implement relations in Python? Objects?
       %
   \end{itemize}
   %
@@ -119,26 +122,29 @@
 % Slide
 %
 \begin{frame}[fragile]
-  \frametitle{Inputs and Outputs with The Collatz Function}
-  \hspace*{-.2in}
+  \frametitle{Reviewing a Program that Uses Ordered Pairs}
+  \hspace*{-.25in}
   \begin{minipage}{6in}
-    \vspace*{.25in}
-    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
-def collatz(number: int) -> Iterator[int]:
-    yield number
-    while number != 1:
-        if number % 2 == 0:
-            number = number // 2
-        else:
-            number = 3 * number + 1
-        yield number
+    \vspace*{.2in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\normalsize]{python}
+def factorial_iterative(number):
+    factorial_list = []
+    value = 1
+    factorial_value = 1
+    values = list(range(1, number + 1))
+    for value in values:
+        factorial_value = factorial_value * value
+        factorial_list.
+           append((value, factorial_value))
+    return ((value, factorial_value),
+           factorial_list)
     \end{minted}
   \end{minipage}
   \vspace*{.25in}
   \begin{center}
     %
     \normalsize \noindent What is the output of this program? \\
-    \normalsize \noindent Are there other ways to create a {\tt FiniteSet}? \\
+    \normalsize \noindent Are there other ways to create a {\tt Tuple[Tuple[int, int], List[Tuple[int, int]]]}? \\
     \normalsize \noindent What operations can we perform with a {\tt FiniteSet}? \\
     %
   \end{center}
@@ -147,39 +153,35 @@ def collatz(number: int) -> Iterator[int]:
 
 % Slide
 %
-\begin{frame}{Should You Pick a Dictionary or a Function?}
+\begin{frame}{Understanding the Use of Ordered Pairs}
   %
   \begin{itemize}
     %
-    \item Wait, are dictionaries and functions the same? Well ...
+    \item {\bf Input}: {\tt number: int}
       %
       \vspace*{-.15in}
       %
-    \item Picking between a discrete structure and a computation:
+    \item {\bf First Output}: {\tt Tuple[int, int]}
       %
-      \begin{itemize}
-        %
-        \item A discrete structure must be finite and fit into memory
-        %
-        \item A function might be the only viable solution for many keys
-        %
-        \item A discrete structure can often be mutable, giving flexibility
-        %
-        \item It is often hard to make a function mutable at runtime
-        %
-        \item The lookup of a value for a key is done efficiently in a
-          dictionary
-        %
-        \item A function that computes the value for a key may take time
-        %
-        \item But, what is going to be easier to program, test, and maintain?
-        %
-      \end{itemize}
+      \vspace*{-.15in}
       %
-      \vspace*{-.2in}
+    \item {\bf Second Output}: {\tt List[Tuple[int, int]]}
       %
-    \item The honest answer is ``it depends''! Use your judgement and
-      benchmarks! Defend your decision with evidence!
+      \vspace*{-.15in}
+      %
+    \item The two return values are also combined in a {\tt Tuple}!
+      %
+      \vspace*{-.15in}
+      %
+    \item Recall {\tt Tuple[int, int]} is Pythonic for an ordered pair
+      %
+      \vspace*{-.15in}
+      %
+    \item What is the need for such a complicated return value?
+      %
+      \vspace*{-.15in}
+      %
+    \item Also, what is the meaning of {\tt factorial\_list.append}?
       %
   \end{itemize}
   %
