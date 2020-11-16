@@ -15,6 +15,10 @@ class Dog:
     def action(self, action):
         return f"Hey, {self.name} {action}!"
 
+    # define a __str__ method for the dog
+    def __str__(self):
+        return f"{self.name} is a {self.age} years old {self.breed}"
+
 
 # create an instance of the Dog class for Bosco
 bosco = Dog("Bosco", 6, "Havanese")
@@ -23,6 +27,9 @@ bosco = Dog("Bosco", 6, "Havanese")
 faith = Dog("Faith", 14, "Havanese")
 
 # display the address of the Bosco instance
+# note that this only works if __str__ is
+# commented out as this controls textual display
+# otherwise
 print(bosco)
 
 print()
@@ -44,6 +51,9 @@ print(bosco.action("roll over"))
 print()
 
 # display the address of the Faith instance
+# note that this only works if __str__ is
+# commented out as this controls textual display
+# otherwise
 print(faith)
 
 print()
