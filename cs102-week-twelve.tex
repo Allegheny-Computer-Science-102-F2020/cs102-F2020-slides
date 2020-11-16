@@ -1,0 +1,230 @@
+\documentclass[14pt,aspectratio=169]{beamer}
+
+\usepackage{pgfpages}
+\usepackage{fancyvrb}
+\usepackage{pgfplots}
+
+\usepackage{minted}
+\usemintedstyle{tango}
+
+\usepackage{amsfonts}
+
+\usepackage{moresize}
+\usepackage{anyfontsize}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{arrows.meta}
+
+\tikzstyle{process}=[rectangle, draw, thick, text width=5em, text centered, minimum height=2.5em, fill=gray!40]
+\tikzstyle{entity}=[rounded rectangle, draw, thick, text width=5em, text centered, minimum height=1.5em, fill=gray!40]
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\setbeamercolor{background canvas}{bg=lightgray}
+
+% define some colors for a consistent theme across slides
+
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+
+\title{\vspace*{-.25in}Discrete Structures: \\ Using Relations\\ and Objects\\ in Python}
+
+\author{{\bf Gregory M. Kapfhammer}}
+
+\institute[shortinst]{{\bf Department of Computer Science, Allegheny College}}
+
+\begin{document}
+
+{
+  \setbeamercolor{page number in head/foot}{fg=background canvas.bg}
+  \begin{frame}
+    \titlepage
+  \end{frame}
+}
+
+%% Slide
+%
+\begin{frame}{Technical Question}
+  %
+  \hspace*{.25in}
+  %
+  \begin{minipage}{5in}
+    %
+    \vspace*{.1in}
+    %
+    \begin{center}
+      %
+      {\large How do I use the concept of a relation and the industrially
+      relevant practice of object-oriented programming to correctly implement
+      easy-to-understand programs in Python?}
+      %
+    \end{center}
+    %
+  \end{minipage}
+  %
+  \vspace{2ex}
+  %
+  \begin{center}
+    %
+    \small Let's learn how to pick the best discrete structure and function
+    when we are implementing a function to calculate a mathematical
+    calculation! Please review the content from previous weeks so that you can
+    keep this week's content in an appropriate context. Also, try out all of
+    the Python code!
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{The Concept of a Mathematical Mapping}
+  %
+  \begin{itemize}
+    %
+    \item As first introduced in Chapter 1, a mapping is a set of ordered pairs
+      in which no two have the same first element
+      %
+      \vspace*{-.15in}
+      %
+    \item Implementing functions in the Python language:
+      %
+      \begin{itemize}
+        %
+        \item Functions can accept zero or more inputs
+        %
+        \item Functions can produce zero or more outputs
+        %
+        \item Higher-order functions can accept and produce functions
+        %
+        \item One function's input can become another function's output
+        %
+        \item Imperative or declarative specification of functions
+        %
+        \item Discrete structures normally have a ``function interface''
+        %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item It is possible to implement a function in many different ways! How do
+      we decide which approach is the best?
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Inputs and Outputs with The Collatz Function}
+  \hspace*{-.2in}
+  \begin{minipage}{6in}
+    \vspace*{.25in}
+    \begin{minted}[mathescape, numbersep=5pt, fontsize=\large]{python}
+def collatz(number: int) -> Iterator[int]:
+    yield number
+    while number != 1:
+        if number % 2 == 0:
+            number = number // 2
+        else:
+            number = 3 * number + 1
+        yield number
+    \end{minted}
+  \end{minipage}
+  \vspace*{.25in}
+  \begin{center}
+    %
+    \normalsize \noindent What is the output of this program? \\
+    \normalsize \noindent Are there other ways to create a {\tt FiniteSet}? \\
+    \normalsize \noindent What operations can we perform with a {\tt FiniteSet}? \\
+    %
+  \end{center}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Should You Pick a Dictionary or a Function?}
+  %
+  \begin{itemize}
+    %
+    \item Wait, are dictionaries and functions the same? Well ...
+      %
+      \vspace*{-.15in}
+      %
+    \item Picking between a discrete structure and a computation:
+      %
+      \begin{itemize}
+        %
+        \item A discrete structure must be finite and fit into memory
+        %
+        \item A function might be the only viable solution for many keys
+        %
+        \item A discrete structure can often be mutable, giving flexibility
+        %
+        \item It is often hard to make a function mutable at runtime
+        %
+        \item The lookup of a value for a key is done efficiently in a
+          dictionary
+        %
+        \item A function that computes the value for a key may take time
+        %
+        \item But, what is going to be easier to program, test, and maintain?
+        %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item The honest answer is ``it depends''! Use your judgement and
+      benchmarks! Defend your decision with evidence!
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+% Slide
+%
+\begin{frame}{Creating Mathematical Mappings in Python}
+  %
+  \begin{itemize}
+    %
+    \item Dictionaries are super discrete structures with benefits!
+      %
+      \vspace*{-.2in}
+      %
+    \item Combine dictionaries and functions or use separately
+      %
+      \vspace*{-.2in}
+      %
+    \item Using dictionaries and functions in Python programs:
+      %
+      \begin{itemize}
+        %
+        \item {\bf Q1}: What are the characteristics of functions in Python?
+          %
+        \item {\bf Q2}: What are the characteristics of dictionaries in Python?
+          %
+        \item {\bf Q3}: How do you decide between a dictionary or a function?
+          %
+        \item {\bf Q4}: What functions can process a multiset discrete
+          structure?
+          %
+        \item {\bf Q5}: How to combine functions and dictionaries for
+          efficiency?
+          %
+      \end{itemize}
+      %
+      \vspace*{-.2in}
+      %
+    \item See \url{https://realpython.com/python-dicts/} for more on how to
+      create and use dictionaries in Python!
+      %
+  \end{itemize}
+  %
+\end{frame}
+
+\end{document}
