@@ -9,6 +9,9 @@ def map(f, sequence):
     return result
 
 
+values = (2, 3, 5, 7, 11)
+squared = map(square, values)
+
 squared = map(square, (2, 3, 5, 7, 11))
 print(squared)
 
